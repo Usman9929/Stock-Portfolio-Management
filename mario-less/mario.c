@@ -9,7 +9,7 @@ int main()
         height = get_int("Height: ");  // Asking Height from the user.
     }
 
-    while (height > 8 || height <= 0); // Check the input. Is the input enter 
+    while (height > 8 || height <= 0); // Check the input Is the input enter
 
     for (int i = 0; i < height; i++)
     {
