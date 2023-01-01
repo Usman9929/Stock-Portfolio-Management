@@ -6,7 +6,7 @@ int main()
     int height;
     do
     {
-        height = get_int("Height: ");  // Asking Height from the user.
+        height = get_int("Height: ");  // It will ask the user for the Height.
     }
 
     while (height > 8 || height <= 0); // Check the input Is the input enter
