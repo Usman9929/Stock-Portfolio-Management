@@ -12,11 +12,11 @@ int main()
     while (height > 8 || height <= 0); // It will check that the user enter the digits from 1 to 8. If not the statement executed again.
     for (int i = 0; i < height; i++)
     {
-        for (int k = height - i; k > 0; k--) // 
+        for (int k = height - i; k > 0; k--) // Right-align that pyramid by pushing its hashes to the right by prefixing them with space.
         {
              printf(" ");
         }
-        for (int j = 0; j <= i; j++)
+        for (int j = 0; j <= i; j++) // 
         {
             printf("#");
         }
