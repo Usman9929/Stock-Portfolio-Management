@@ -16,10 +16,10 @@ int main()
         {
              printf(" ");
         }
-        for (int j = 0; j <= i; j++) // 
+        for (int j = 0; j <= i; j++) // print Hashes (#)
         {
             printf("#");
         }
-        printf("\n");
+        printf("\n"); // Print new line after each hashes.
     }
 }
