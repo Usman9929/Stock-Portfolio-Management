@@ -8,7 +8,7 @@ int main(void)
     {
         height = get_int("Height:");   // Ask form the user to decide just how tall the pyramids should be.
     }
-    while (height > 8 || height <= 0); //
+    while (height > 8 || height <= 0); // Check the that the number is between 1 to 8. If not it will excute again and again.
 
     for (int i = 0; i < height; i++)
     {
