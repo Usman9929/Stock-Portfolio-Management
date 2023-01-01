@@ -14,7 +14,7 @@ int main()
     {
         for (int k = height - i; k > 0; k--) // Right-align that pyramid by pushing its hashes to the right by prefixing them with space.
         {
-             printf(" ");
+            printf(" ");
         }
         for (int j = 0; j <= i; j++) // print Hashes (#)
         {
