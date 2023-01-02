@@ -12,7 +12,7 @@ int main(void)
 
     for (int i = 0; i < height; i++)  // This is parent loop.
     {
-        for (int j = height - i-1; j > 0; j--)  // This loop for to add some spaces from left side.
+        for (int j = height - i - 1; j > 0; j--) // This loop for to add some spaces from left side.
         {
             printf(" ");
         }
