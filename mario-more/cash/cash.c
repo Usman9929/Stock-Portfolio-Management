@@ -41,10 +41,10 @@ int get_cents(void)
     int cents;
     do
     {
-        cent = get_int("Enter Cents Owed:");
+        cents = get_int("Enter Cents Owed:");
     }
-    while (cent > 0);
-    return cent;
+    while (cents > 0);
+    return cents;
 }
 
 int calculate_quarters(int cents)
