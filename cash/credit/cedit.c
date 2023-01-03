@@ -1,0 +1,19 @@
+// Get card number
+    long n = get_long("Number: ");
+    // Count length
+    int i = 0;
+    long cc = n;
+    while (cc > 0)
+    {
+        cc = cc / 10;
+        i++;
+    }
+
+    // Check if length is valid
+    if (i != 13 && i != 15 && i != 16)
+    {
+        printf("INVALID\n");
+        return 0;
+    }
+
+    
