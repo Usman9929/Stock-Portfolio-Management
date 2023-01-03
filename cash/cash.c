@@ -37,7 +37,7 @@ int main(void)
 
 int get_cents(void)
 {
-            // Get the cents from the user.
+    // Get the cents from the user.
     int cents;
     do
     {
@@ -49,7 +49,7 @@ int get_cents(void)
 
 int calculate_quarters(int cents)
 {
-            // Calculate the number of quarters.
+    // Calculate the number of quarters.
     int quarters = 0;
 
     while (cents >= 25)
@@ -62,9 +62,9 @@ int calculate_quarters(int cents)
 
 int calculate_dimes(int cents)
 {
-            // Calculate the number of dimes to be given.
+    // Calculate the number of dimes to be given.
     int dimes = 0;
-    while ( cents >= 10)
+    while (cents >= 10)
     {
         dimes++;
         cents = cents - 10;
@@ -74,9 +74,9 @@ int calculate_dimes(int cents)
 
 int calculate_nickels(int cents)
 {
-            // Calculate the number nickels.
+    // Calculate the number nickels.
     int nickels = 0;
-    while ( cents >= 5)
+    while (cents >= 5)
     {
         nickels++;
         cents = cents - 5;
@@ -86,9 +86,9 @@ int calculate_nickels(int cents)
 
 int calculate_pennies(int cents)
 {
-            // Calculate the number of pennies.
+    // Calculate the number of pennies.
     int pennies = 0;
-    while ( cents >= 1)
+    while (cents >= 1)
     {
         pennies++;
         cents = cents - 1;
