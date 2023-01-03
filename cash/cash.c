@@ -75,7 +75,7 @@ int calculate_nickels(int cents)
     while ( cents >= 5)
     {
         nickels++;
-        cents = cesnts - 5;
+        cents = cents - 5;
     }
     return nickels;
 }
