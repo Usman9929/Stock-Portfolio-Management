@@ -6,14 +6,14 @@ int main(void)
     int start_size; // a variable for start size.
     do
     {
-        start_size = get_int ("Start Size:");  // get start size from the user.
+        start_size = get_int("Start Size:");   // get start size from the user.
     }
-    while(start_size < 9);
+    while (start_size < 9);
 
     int end_size;    //a variable for end_size
     do
     {
-         end_size = get_int("End Size: "); // Get the end size from the user.
+        end_size = get_int("End Size: "); // Get the end size from the user.
     }
     while (end_size < start_size);
 
