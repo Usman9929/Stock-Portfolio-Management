@@ -18,7 +18,7 @@ int main(void)
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
 
-    if(score1 > score2)
+    if(score1 > score2)  
     {
         printf("Player 1 wins!\n");
     }
@@ -34,6 +34,7 @@ int main(void)
 
 int compute_score(string word)
 {
+    // Compute and return score for string
     int score = 0;
 
     for (int i = 0; i < strlen(word); i++)
