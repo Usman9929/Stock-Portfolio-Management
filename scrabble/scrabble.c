@@ -40,15 +40,13 @@ int compute_score(string word)
     {
         if(islower(word[i]))
         {
-            POINTS[i] = word[i] - 'a';
+           score += POINTS[word[i] - 'a'];
 
-            score += POINTS[i];
         }
         if(isupper(word[i]))
         {
-            POINTS[i] = word[i] - 'A';
+            score += POINTS[word[i] - 'A'];
 
-            score += POINTS[i];
         }
     }
     return score;
