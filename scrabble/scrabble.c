@@ -36,14 +36,14 @@ int compute_score(string word)
 {
     int score = 0;
 
-    for(int i = 0; i < strlen(word); i++)
+    for (int i = 0; i < strlen(word); i++)
     {
-        if(islower(word[i]))
+        if (islower(word[i]))
         {
-           score += POINTS[word[i] - 'a'];
+            score += POINTS[word[i] - 'a'];
 
         }
-        if(isupper(word[i]))
+        if (isupper(word[i]))
         {
             score += POINTS[word[i] - 'A'];
 
