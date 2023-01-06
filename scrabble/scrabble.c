@@ -52,5 +52,5 @@ int compute_score(string word)
             score += POINTS[i];
         }
         i++;
-        
     }
+}
