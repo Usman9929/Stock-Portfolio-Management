@@ -36,8 +36,8 @@ int compute_score(string word)
 {
     int score = 0;
 
-    int i = 0;
-    while(i < strlen(word))
+
+    for(int i = 0; i < strlen(word); i++)
     {
         if(islower(word[i]))
         {
@@ -51,7 +51,6 @@ int compute_score(string word)
 
             score += POINTS[i];
         }
-        i++;
     }
     return score;
 }
