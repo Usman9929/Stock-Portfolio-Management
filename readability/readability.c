@@ -9,12 +9,15 @@ int main(void)
     // Prompt user
     string text = get_string("Text: ");
 
+    // String length
     int count_letters = 0;
     int count_words = 1;
     int count_sentences = 0;
 
+     // Loop for counting
     for (int i = 0; i < strlen(text); i++)
     {
+        
         if (isalpha(text[i]))
         {
             count_letters++;
