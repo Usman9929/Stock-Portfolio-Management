@@ -8,27 +8,27 @@ int main(void)
 {
     string text = get_string("Text: ");
 
-    int letters = 0;
-    int words = 1;
-    int sentences = 0;
+    int count_letters = 0;
+    int count_words = 1;
+    int count_sentences = 0;
 
     for (int i = 0; i < strlen(text); i++)
     {
         if (isalpha(text[i]))
         {
-            letters++;
+            count_letters++;
         }
         else if (text[i] == ' ')
         {
-            words++;
+            count_words++;
         }
         else if (text[i] == '.' || text[i] == '?' || text[i] == '!')
         {
-            sentences++;
+            count_sentences++;
         }
     }
-    float L = (float) letters / (float) words * 100;
-    float S = (float) sentences / (float) words * 100;
+    float L = (float) count_letters / (float) count_words * 100;
+    float S = (float) count_sentences / (float) count_words * 100;
 
     int index = round(0.0588 * L - 0.296 * S - 15.8);
 
