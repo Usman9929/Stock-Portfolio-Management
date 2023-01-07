@@ -18,8 +18,8 @@ int main(void)
     int letters = count_letters(x);
     int words = count_words(x);
     int sentences = count_sentences(x);
-    float L = (float) round(((float)letters / (float) words)*100);
-    float S = (float) round(((float) sentences / (float) words)*100);
+    float L = (float) round((float)letters / (float) words)*100;
+    float S = (float) round((float) sentences / (float) words)*100;
 
     //Coleman-Liau formula
     int grade = (int) round((0.0588 * L - 0.296 * S - 15.8));
