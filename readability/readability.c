@@ -6,6 +6,7 @@
 
 int main(void)
 {
+    // Prompt user
     string text = get_string("Text: ");
 
     int count_letters = 0;
