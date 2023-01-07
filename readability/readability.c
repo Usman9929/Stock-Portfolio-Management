@@ -14,7 +14,7 @@ int main(void)
     int count_words = 1;
     int count_sentences = 0;
 
-     // Loop for counting
+    // Loop for counting
     for (int i = 0; i < strlen(text); i++)
     {
         // Counting letters
@@ -23,7 +23,7 @@ int main(void)
             count_letters++;
         }
 
-         // Counting words
+        // Counting words
         else if (text[i] == ' ')
         {
             count_words++;
