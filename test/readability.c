@@ -22,7 +22,7 @@ int main(void)
     float S = (float) round((float) sentences / (float) words)*100;
 
     //Coleman-Liau formula
-    int grade = (int) round((0.0588 * L - 0.296 * S - 15.8));
+    int grade = round(0.0588 * L - 0.296 * S - 15.8);
     if(grade > 16) {
         printf("Grade 16+\n");
     }
