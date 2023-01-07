@@ -39,12 +39,14 @@ int count_letters(string text){
     int letters = 0;
     for(int i = 0, length = strlen(text); i < length; i++)
     {
-       if (isalpha(text[i]))
-        {
+        if (islower(text[i])){
             letters++;
         }
-
+        else if (isupper(text[i])){
+            letters++;
+        }
     }
+
      return letters;
 }
 
