@@ -37,11 +37,14 @@ int main(void)
 // Functions Declaration Section
 int count_letters(string text){
     int letters = 0;
-    if (isalpha(text[i]))
+    for(int i = 0, length = strlen(text); i < length; i++)
+    {
+       if (isalpha(text[i]))
         {
-            count_letters++;
+            letters++;
         }
 
+    }
      return letters;
 }
 
