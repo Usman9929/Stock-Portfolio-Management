@@ -37,7 +37,7 @@ int main(void)
 // Functions Declaration Section
 int count_letters(string text){
     int letters = 0;
-    for(int i = 0, length = strlen(text); i < length; i++)
+    for(int i = 0, i = strlen(text); i++)
     {
         if (islower(text[i])){
             letters++;
