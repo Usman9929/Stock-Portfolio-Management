@@ -1,4 +1,5 @@
 #include <cs50.h>
+#include <string.h>
 #include <stdio.h>
 
 int main(void)
@@ -11,6 +12,6 @@ int main(void)
 
     for (int i = 0; i < strlen(text); i++)
     {
-        
+
     }
 }
