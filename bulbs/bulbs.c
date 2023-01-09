@@ -13,7 +13,7 @@ int main(void)
     string x = get_string("Message");
     int value = string_to_int(x);
 }
-int string _to_int(string x)
+int string_to_int(string x)
 {
     int counter = 0;
     for(int i = 0;length = strlen(x); i < length; i++)
