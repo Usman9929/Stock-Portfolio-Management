@@ -5,7 +5,8 @@
 const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
-int 
+int string_to_int(string x);
+int arr[] = {};
 
 int main(void)
 {
