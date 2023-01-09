@@ -8,7 +8,7 @@ void print_bulb(int bit);
 
 int main(void)
 {
-    // TODO
+    get sri
 }
 
 void print_bulb(int bit)
