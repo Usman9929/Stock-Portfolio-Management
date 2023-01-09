@@ -5,12 +5,23 @@
 const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
+int 
 
 int main(void)
 {
-    get sri
+    string x = get_string("Message");
+    int value = string_to_int(x);
 }
-
+int string _to_int(string x)
+{
+    int counter = 0;
+    for(int i = 0;length = strlen(x); i < length; i++)
+    {
+        couter = (int)x[i];
+        printf("%i\t", counter);
+    }
+    return counter;
+}
 void print_bulb(int bit)
 {
     if (bit == 0)
