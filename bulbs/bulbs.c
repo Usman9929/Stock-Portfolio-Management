@@ -2,25 +2,32 @@
 #include <stdio.h>
 #include <string.h>
 
+
 const int BITS_IN_BYTE = 8;
-
 void print_bulb(int bit);
-
+void text_to_int(string x);
+void int_to_binary(int ARR[], int length);
+int arr[]={};
+char array[]={};
 int main(void)
 {
-    // TODO
-}
-
-void print_bulb(int bit)
-{
-    if (bit == 0)
-    {
-        // Dark emoji
-        printf("\U000026AB");
+    string x = get_string("Message:");
+    int Length = strlen(x);
+    text_to_int(x);
+    for (int i = 0; i<Length; i++){
+        printf("%i\t", arr[i]);
     }
-    else if (bit == 1)
+    int_to_binary(arr, Length);
+    int counter = 0;
+    for(int p = 0 ; p<Length; p++)
     {
-        // Light emoji
-        printf("\U0001F7E1");
+        printf("%c\n",array[p]);
+        counter++;
+
+        if(counter == 8 ){
+            printf("\n");
+            counter = 0;
+        }
+
     }
 }
