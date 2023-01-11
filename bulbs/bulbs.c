@@ -5,23 +5,36 @@
 const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
-int string_to_int(string x);
-int arr[] = {};
+void strToBinary(string s);
 
 int main(void)
 {
-    string x = get_string("Message");
-    int value = string_to_int(x);
+    string s = get_string("Message");
+    strToBinary(s);
 }
-int string_to_int(string x)
+void strToBinary(string s)
 {
-    int counter = 0;
-    for(int i = 0;length = strlen(x); i < length; i++)
+    int n = s.length();
+
+
+    for (int i = 0; i <= n; i++)
     {
-        couter = (int)x[i];
-        printf("%i\t", counter);
+        // convert each char to
+        // ASCII value
+        int val = int(s[i]);
+
+        // Convert ASCII value to binary
+        string bin = "";
+        while (val > 0)
+        {
+            (val % 2)? bin.push_back('1') :
+                       bin.push_back('0');
+            val /= 2;
+        }
+        reverse(bin.begin(), bin.end());
+
+        cout << bin << " ";
     }
-    return counter;
 }
 void print_bulb(int bit)
 {
