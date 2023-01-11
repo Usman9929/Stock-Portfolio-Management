@@ -2,27 +2,25 @@
 #include <stdio.h>
 #include <string.h>
 
-int main()
+const int BITS_IN_BYTE = 8;
+
+void print_bulb(int bit);
+
+int main(void)
 {
-    int i, j, c;
-    string str = get_string("Messege:");
-    for (i = 0; str[i] != '\0'; i++)
-    {
-        c=str[i];
-        for (j = 7; j+1>0; j--)
-        {
-    if (c>=(1<<j))
+    // TODO
+}
+
+void print_bulb(int bit)
+{
+    if (bit == 0)
     {
         // Dark emoji
-        c = c-(1<<j);
-        printf("\U0001F7E1");
-    }
-    else
-    {
-        // Light emoji
         printf("\U000026AB");
     }
-}
-printf("\n");
+    else if (bit == 1)
+    {
+        // Light emoji
+        printf("\U0001F7E1");
     }
 }
