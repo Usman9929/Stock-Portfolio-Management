@@ -5,7 +5,7 @@
 int main()
 {
     int i, j, c;
-    string str = get_string("Messege");
+    string str = get_string("Messege:");
     for (i = 0; str[i] != '\0'; i++)
     {
         c=str[i];
