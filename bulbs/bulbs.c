@@ -40,11 +40,6 @@ void text_to_int(string x)
 }
 
 
-
-
-
-
-
 void int_to_binary(int ARR[], int length)
 {   int n =0;
     int array_length = 0 ;
