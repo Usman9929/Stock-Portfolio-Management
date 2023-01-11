@@ -6,21 +6,27 @@ const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
 
-int main(void)
+string toBinary(int n)
 {
-    string input = get_string("Message :");
-    for(int i = 0; i <= input[i]; i++)
-    {
-        int val = input[i];
-        int bin = 0, rem = 0, place = 1;
-        while (val)
-        {
-            rem = val % 2;
-            val = val / 2;
-            bin = bin + (rem * place);
-            place = place * 10;
-        }
+    string r;
+    while ( n!=0 ){
+        r += ( n % 2 == 0 ? "0" : "1" );
+        n /= 2;
     }
+    return r;
+}
+
+int main() {
+    string str = get_string("Messege");
+
+    for (int i = 0; i < str.length(); ++i) {
+        cout << toBinary(str[i]) << " ";
+
+        if (i % 6 == 0 && i != 0)
+            cout << endl;
+    }
+
+    return EXIT_SUCCESS;
 }
 
 void print_bulb(int bit)
