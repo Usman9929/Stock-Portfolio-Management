@@ -5,12 +5,22 @@
 const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
-void strToBinary(string s);
 
 int main(void)
 {
-    string s = get_string("Message");
-    strToBinary(s);
+    string input = get_string("Message");
+    for(int i = 0; i <= input[i]; i++)
+    {
+        int val = input[i];
+        int bin = 0, rem = 0, place = 1;
+        while (val)
+        {
+            rem = val % 2;
+            val = val / 2;
+            bin = bin + (rem * place);
+            place = place * 10;
+        }
+    }
 }
 void strToBinary(string s)
 {
