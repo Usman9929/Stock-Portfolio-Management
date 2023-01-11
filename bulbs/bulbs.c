@@ -15,12 +15,14 @@ int main()
     {
         // Dark emoji
         c = c-(1<<j);
-        printf("\U000026AB");
+        printf("\U0001F7E1");
+        //printf("\U000026AB");
     }
     else
     {
         // Light emoji
-        printf("\U0001F7E1");
+        printf("\U000026AB");
+       // printf("\U0001F7E1");
     }
 }
 printf("\n");
