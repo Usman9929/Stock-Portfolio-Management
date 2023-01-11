@@ -6,31 +6,20 @@ const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
 
-string toBinary(int n)
+int  main()
 {
-    string r;
-    while ( n!=0 ){
-        r += ( (string)n % 2 == 0 ? "0" : "1" );
-        n /= 2;
-    }
-    return r;
+    int i, j, k;
+    string input = get_string("Messege");
 }
 
-int main() {
-    string str = get_string("Messege");
-
-    for (int i = 0; i < str.length(); ++i) {
-        cout << toBinary(str[i]) << " ";
-
-        if (i % 6 == 0 && i != 0)
-            cout << endl;
-    }
-
-    return EXIT_SUCCESS;
-}
 
 void print_bulb(int bit)
 {
+    for (int = 0; input[i] != '0'; i++)
+    {
+        c = input[i];
+        for (j = 7; j+1>0; j++)
+        {
     if (bit == 0)
     {
         // Dark emoji
