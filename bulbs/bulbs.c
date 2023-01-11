@@ -14,6 +14,7 @@ int main()
     if (c>=(1<<j))
     {
         // Dark emoji
+        c = c-(1<<j);
         printf("\U000026AB");
     }
     else
