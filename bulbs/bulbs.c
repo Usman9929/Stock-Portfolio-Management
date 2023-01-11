@@ -22,5 +22,6 @@ int main()
         printf("\U0001F7E1");
     }
 }
+printf("\n");
     }
 }
