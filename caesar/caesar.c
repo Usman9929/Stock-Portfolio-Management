@@ -28,6 +28,10 @@ int main(int argc, string argv[])
             {
             prinf(("%c", plaintext[j] - 65 + key) % 26 + 65)
             }
+            else if(islower(plaintext[j]))
+            {
+                prinf(("%c", plaintext[j] - 97 + key) % 26 + 97)
+            }
         }
     }
 
