@@ -27,7 +27,7 @@ int main(int argc, string argv[])
         {
             if(isupper(plaintext[j]))
             {
-            printf("%c", (plaintext[j] + key) % 26);
+            printf("%c", (plaintext[j] - 65 + key) % 26);
             }
             else if(islower(plaintext[j]))
             {
