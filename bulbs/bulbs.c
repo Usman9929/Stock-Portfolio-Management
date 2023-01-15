@@ -80,11 +80,13 @@ void print_bulb(char bit)
 // special function to break the charachters in the binary_array
 //bytes and then store them in revrse order to get the expected output
 void reverse_array(char* input, char* output, int size) {
-    for (int i = 0; i < size; i += 8) {
+    int i;
+    while ( i < size) {
         int start = i;
         int end = i + 8 - 1;
         for (int j = end; j >= start; j--) {
             output[i + (end - j)] = input[j];
         }
+        i += 8;
     }
 }
