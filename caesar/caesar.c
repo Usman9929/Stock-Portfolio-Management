@@ -24,7 +24,7 @@ int main(int argc, string argv[])
 
         for(int j = 0; j < strlen(plaintext); j++)
         {
-            prinf("%c", plaintext[j] + key)
+            prinf(("%c", plaintext[j] - 65 + key) % 26 + 65)
         }
     }
 
