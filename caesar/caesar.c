@@ -21,6 +21,11 @@ int main(int argc, string argv[])
 
         string plaintext = get_string("Plaintext: ");
         printf("Cipertext: ");
+
+        for(int j = 0; j < strlen(plaintext); j++)
+        {
+            
+        }
     }
 
 }
