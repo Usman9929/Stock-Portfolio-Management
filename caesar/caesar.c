@@ -37,6 +37,7 @@ int main(int argc, string argv[])
                 prinf("%c", plaintext[j]);
             }
         }
+        printf("\n");
     }
 
 }
