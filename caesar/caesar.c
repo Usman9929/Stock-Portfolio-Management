@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 int main(int argc, string argv[])
 {
@@ -16,6 +17,7 @@ int main(int argc, string argv[])
             printf("Usage: ./caesar key");
             return 1;
         }
+        int key = atoi(argv[1]);
     }
 
 }
