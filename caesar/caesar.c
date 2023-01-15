@@ -32,6 +32,10 @@ int main(int argc, string argv[])
             {
                 prinf(("%c", plaintext[j] - 97 + key) % 26 + 97)
             }
+            else
+            {
+                prinf("%c", plaintext[j]);
+            }
         }
     }
 
