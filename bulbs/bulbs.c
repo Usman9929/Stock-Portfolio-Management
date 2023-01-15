@@ -6,13 +6,14 @@ const int BITS_IN_BYTE = 8;
 //Functions prototypes
 void print_bulb(char bit);
 void text_to_binary(string x);
-void reverse_array(char* input, char* output, int size);
+void reverse_array(char *input, char *output, int size);
 
 //array prototypes
 char binary_char[1000];
 char reversed_binary_char[1000];
 int main(void)
-{   // get input from users
+{
+    // get input from users
     string x = get_string("Message:");
 
     // to calculate the length of the input
@@ -27,7 +28,7 @@ int main(void)
     //printing the light bulbs
     int counter = 0;
     int i = 0;
-    while ( i < length * BITS_IN_BYTE)
+    while (i < length * BITS_IN_BYTE)
     {
         print_bulb(reversed_binary_char[i]);
         counter++;
@@ -83,12 +84,15 @@ void print_bulb(char bit)
 
 // special function to break the charachters in the binary_array
 //bytes and then store them in revrse order to get the expected output
-void reverse_array(char* input, char* output, int size) {
+void reverse_array(char *input, char *output, int size)
+{
     int i = 0;
-    while ( i < size) {
+    while (i < size)
+    {
         int begin = i;
         int end = i + 8 - 1;
-        for (int j = end; j >= begin; j--) {
+        for (int j = end; j >= begin; j--)
+        {
             output[i + (end - j)] = input[j];
         }
         i += 8;
