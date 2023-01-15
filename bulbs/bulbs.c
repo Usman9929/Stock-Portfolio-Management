@@ -26,7 +26,8 @@ int main(void)
 
     //printing the light bulbs
     int counter = 0;
-    for (int i = 0; i < length * BITS_IN_BYTE;  i++)
+    int i = 0;
+    while ( i < length * BITS_IN_BYTE)
     {
         print_bulb(reversed_binary_char[i]);
         counter++;
@@ -35,6 +36,7 @@ int main(void)
             printf("\n");
             counter = 0;
         }
+        i++;
     }
     printf("\n");
 
