@@ -44,7 +44,8 @@ int main(void)
 void text_to_binary(string x)
 {
     int binary_index = 0;
-    for (int i = 0, length = strlen(x); i < length; i++)
+    int i = 0, length = strlen(x);
+    while (i < length)
     {
         int ascii = (int)x[i];
         for (int j = 0; j < BITS_IN_BYTE; j++)
@@ -60,6 +61,7 @@ void text_to_binary(string x)
             ascii /= 2;
             binary_index++;
         }
+        i++;
     }
 }
 
@@ -82,9 +84,9 @@ void print_bulb(char bit)
 void reverse_array(char* input, char* output, int size) {
     int i = 0;
     while ( i < size) {
-        int start = i;
+        int begin = i;
         int end = i + 8 - 1;
-        for (int j = end; j >= start; j--) {
+        for (int j = end; j >= begin; j--) {
             output[i + (end - j)] = input[j];
         }
         i += 8;
