@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc, string argv[])
 {
@@ -26,7 +27,7 @@ int main(int argc, string argv[])
         {
             if(isupper(plaintext[j]))
             {
-            prinf(("%c", plaintext[j] - 65 + key) % 26 + 65)
+            printf(("%c", plaintext[j] - 65 + key) % 26 + 65)
             }
             else if(islower(plaintext[j]))
             {
