@@ -12,7 +12,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // Validate that the key only of alphabets.
+    // Validate that the key consist only of alphabets.
     string key = argv[1];
     for (int i = 0; i < strlen(key); i++)
     {
@@ -21,5 +21,11 @@ int main(int argc, string argv[])
             printf("Usage: ./substitution key\n");
             return 1;
         }
+    }
+    // Validate that the key consist of 26 charactor.
+    if (strlen(key) != 26)
+    {
+        printf("Key must contains 26 characters\n");
+        return 1;
     }
 }
