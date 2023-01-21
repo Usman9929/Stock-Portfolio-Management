@@ -31,8 +31,6 @@ int main(int argc, string argv[])
             printf("cpertext : ");
 
 
-
-
         //Obtain Cipertext.
         for(int j = 0; j < strlen(plaintext); j++)
         {
