@@ -31,6 +31,9 @@ int main(int argc, string argv[])
     // Validate that each alphbets in the key is unique.
     for (int i = 0; i < strlen(key); i++)
     {
-        for (int j = i + 1; j <  strlen(key))
+        for (int j = i + 1; j < strlen(key); j++)
+        {
+            if (toupper(key[i]) == toupper(key[j]))
+        }
     }
 }
