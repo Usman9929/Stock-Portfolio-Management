@@ -21,12 +21,16 @@ int main(int argc, string argv[])
                 printf("Usage: ./caesar key\n");
                 return 1;
             }
-            // Convert key to integer.
-        int k = atoi(argv[1]);
-        printf("cipertext: ");
-        printf("cpertext");
 
-       
+            // Convert key to integer.
+            int k = atoi(argv[1]);
+
+
+            // Get Plaintext from the user.
+            string plaintext = get_string("Plaintext: ");
+            printf("cpertext : ");
+
+
 
 
         //Obtain Cipertext.
