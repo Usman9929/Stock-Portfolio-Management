@@ -69,5 +69,5 @@ int main(int argc, string argv[])
         }
         else prinf("%c", plaintext[i]);
     }
-    printf(")
+    printf("\n");
 }
