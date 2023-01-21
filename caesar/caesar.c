@@ -28,7 +28,7 @@ int main(int argc, string argv[])
 
             // Get Plaintext from the user.
             string plaintext = get_string("Plaintext: ");
-            printf("cpertext : ");
+            printf("cipertext : ");
 
 
         //Obtain Cipertext.
