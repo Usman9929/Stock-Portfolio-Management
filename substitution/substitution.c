@@ -16,7 +16,7 @@ int main(int argc, string argv[])
     string key = argv[1];
     for (int i = 0; i < strlen(key); i++)
     {
-        if(!isaplha(key[i]))
+        if(!isalpha(key[i]))
         {
             printf("Usage: ./substitution key\n");
             return 1;
@@ -41,7 +41,7 @@ int main(int argc, string argv[])
         }
     }
     // Prompt user for the plaintext.
-    string plaintext = get_stirg("plaintext: ");
+    string plaintext = get_string("plaintext: ");
 
     // Convert all alphabets in the key to uppercase.
     for(int i = 0; i < strlen(key[i]); i++)
