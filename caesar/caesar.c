@@ -9,12 +9,12 @@ int main(int argc, string argv[])
     // Check that there is one command-line argument.
     if(argc != 2)
     {
-        printf("Usage: ./caesar Key\n");
+        printf("Usage: ./caesar key");
         return 1;
     }
 
         // Check that the input is a digit.
-        for(int i = 0; i < strlen(argv[i]); i++)
+        for(int i = 0; i < strlen(argv[1]); i++)
         {
             if(!isdigit(argv[1][i]))
             {
