@@ -44,7 +44,7 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
 
     // Convert all alphabets in the key to uppercase.
-    for(int i = 0; i < strlen(key[i]); i++)
+    for(int i = 0; i < strlen(key); i++)
     {
         if (islower(key[i]))
         {
@@ -67,7 +67,7 @@ int main(int argc, string argv[])
             int letter = plaintext[i] - 97;
             printf("%c", key[letter] + 32);
         }
-        else prinf("%c", plaintext[i]);
+        else printf("%c", plaintext[i]);
     }
     printf("\n");
 }
