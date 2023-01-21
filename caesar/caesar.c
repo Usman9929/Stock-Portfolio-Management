@@ -18,7 +18,15 @@ int main(int argc, string argv[])
         string key = argv[1];
 
         // Check that the input is a digit.
-        for(int i = 0; i < strlen(argv[i]))
+        for(int i = 0; i < strlen(argv[i]); i++)
+        {
+            if(!isdigit(argv[1][i]))
+            {
+                printf("Usage: ./caesar Key\n");
+                return 1;
+            }
+        }
+        printf("Success\n%s\n", key);
 
 
 }
