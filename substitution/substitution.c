@@ -5,5 +5,5 @@
 
 int main(int argc, string argv[])
 {
-
+    // Check there is no command-line arguments.
 }
