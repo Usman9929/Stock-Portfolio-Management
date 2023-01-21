@@ -31,7 +31,7 @@ int main(int argc, string argv[])
 
         // Convert key to integer.
         int k = atoi(key);
-        printf("Cipertext: ");
+        printf("cipertext: ");
 
         //Obtain Cipertext.
         for(int i = 0; i < strlen(plaintext); i++)
