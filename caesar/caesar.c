@@ -14,6 +14,7 @@ int main(int argc, string argv[])
     else
     {
         printf("Success!\n");
+
     }
         // Define the key.
         string key = argv[1];
