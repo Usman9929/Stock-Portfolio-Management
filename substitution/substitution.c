@@ -6,7 +6,7 @@
 int main(int argc, string argv[])
 {
     // Check there is no command-line arguments.
-    if(argc != 2)
+    if( argc != 2)
     {
         printf("Usage: ./subtitution key\n");
         return 1;
@@ -15,9 +15,9 @@ int main(int argc, string argv[])
     // Validate that the key consist only of alphabets.
     string key = argv[1];
     int x = 0;
-    while ( x < strlen(key))
+    while (x < strlen(key))
     {
-        if(!isalpha(key[x]))
+        if (!isalpha(key[x]))
         {
             printf("Usage: ./substitution key\n");
             return 1;
@@ -46,8 +46,8 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
 
     // Convert all alphabets in the key to uppercase.
-     int z = 0;
-    while(z < strlen(key))
+    int z = 0;
+    while (z < strlen(key))
     {
         if (islower(key[z]))
         {
