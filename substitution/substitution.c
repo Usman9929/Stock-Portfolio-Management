@@ -14,13 +14,15 @@ int main(int argc, string argv[])
 
     // Validate that the key consist only of alphabets.
     string key = argv[1];
-    for (int i = 0; i < strlen(key); i++)
+    int x = 0;
+    while ( x < strlen(key))
     {
-        if(!isalpha(key[i]))
+        if(!isalpha(key[x]))
         {
             printf("Usage: ./substitution key\n");
             return 1;
         }
+        x++;
     }
     // Validate that the key consist of 26 charactor.
     if (strlen(key) != 26)
@@ -44,18 +46,21 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext: ");
 
     // Convert all alphabets in the key to uppercase.
-    for(int i = 0; i < strlen(key); i++)
+     int z = 0;
+    while(z < strlen(key))
     {
-        if (islower(key[i]))
+        if (islower(key[z]))
         {
-            key[i] = key[i] - 32;
+            key[z] = key[z] - 32;
         }
+        z++;
     }
 
     // Print the cipertext.
     printf("ciphertext: ");
 
-    for (int i = 0; i < strlen(plaintext); i++)
+    int i = 0;
+    while (i < strlen(plaintext))
     {
         if (isupper(plaintext[i]))
         {
@@ -68,6 +73,7 @@ int main(int argc, string argv[])
             printf("%c", key[letter] + 32);
         }
         else printf("%c", plaintext[i]);
+        i++;
     }
     printf("\n");
 }
