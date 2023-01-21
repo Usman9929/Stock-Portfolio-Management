@@ -13,4 +13,13 @@ int main(int argc, string argv[])
     }
 
     // Validate that the key only of alphabets.
+    string key = argv[1];
+    for (int i = 0; i < strlen(key); i++)
+    {
+        if(!isaplha(key[i]))
+        {
+            printf("Usage: ./substitution key\n");
+            return 1;
+        }
+    }
 }
