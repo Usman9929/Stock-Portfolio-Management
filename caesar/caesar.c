@@ -30,7 +30,7 @@ int main(int argc, string argv[])
         string plaintext = get_string("Plaintext: ");
 
         // Convert key to integer.
-        int k = atoi(argv[key]);
+        int k = atoi(key);
         printf("cipertext: ");
 
         //Obtain Cipertext.
