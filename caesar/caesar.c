@@ -13,9 +13,6 @@ int main(int argc, string argv[])
         return 1;
     }
 
-        // Define the key.
-        string key = argv[1];
-
         // Check that the input is a digit.
         for(int i = 0; i < strlen(argv[i]); i++)
         {
