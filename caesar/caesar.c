@@ -25,13 +25,12 @@ int main(int argc, string argv[])
                 return 1;
             }
         }
-        printf("Success\n%s\n", key);
 
         // Get Plaintext from the user.
         string plaintext = get_string("Plaintext: ");
 
         // Convert key to integer.
-        int k = aoti(key);
+        int k = atoi(key);
         printf("Cipertext: ");
 
         //Obtain Cipertext.
