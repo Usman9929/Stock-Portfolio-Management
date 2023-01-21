@@ -44,4 +44,23 @@ int main(int argc, string argv[])
     string plaintext = get_stirg("plaintext: ");
 
     // Convert all alphabets in the key to uppercase.
+    for(int i = 0; i < strlen(key[i]); i++)
+    {
+        if (islower(key[i]))
+        {
+            key[i] = key[i] - 32;
+        }
+    }
+
+    // Print the cipertext.
+    printf("ciphertext: ");
+
+    for (int i = 0; i < strlen(plaintext); i++)
+    {
+        if (isupper(plaintext[i]))
+        {
+            int letter = plaintext[i] - 65;
+            printf()
+        }
+    }
 }
