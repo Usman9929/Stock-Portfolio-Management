@@ -6,7 +6,7 @@
 int main(int argc, string argv[])
 {
     // Check there is no command-line arguments.
-    if( argc != 2)
+    if (argc != 2)
     {
         printf("Usage: ./subtitution key\n");
         return 1;
@@ -73,7 +73,9 @@ int main(int argc, string argv[])
             printf("%c", key[letter] + 32);
         }
         else
-        printf("%c", plaintext[i]);
+        {
+            printf("%c", plaintext[i]);
+        }
         i++;
     }
     printf("\n");
