@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 int main(int argc, string argv[])
 {
@@ -28,5 +29,18 @@ int main(int argc, string argv[])
 
         // Get Plaintext from the user.
         string plaintext = get_string("Plaintext: ");
+
+        // Convert key to integer.
+        int k = aoti(key);
+        printf("Cipertext: ");
+
+        //Obtain Cipertext.
+        for(int i = 0; i < strlen(plaintext); i++)
+        {
+            if(isupper(plaintext[i]))
+            {
+
+            }
+        }
 
 }
