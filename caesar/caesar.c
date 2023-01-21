@@ -30,7 +30,7 @@ int main(int argc, string argv[])
             string plaintext = get_string("Plaintext: ");
             printf("ciphertext: ");
 
-
+        }
         //Obtain Cipertext.
         for(int j = 0; j < strlen(plaintext); j++)
         {
@@ -46,7 +46,6 @@ int main(int argc, string argv[])
             {
                 printf("%c", plaintext[j]);
             }
-        }
         }
         printf("\n");
 }
