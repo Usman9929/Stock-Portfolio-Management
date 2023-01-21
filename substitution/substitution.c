@@ -29,5 +29,8 @@ int main(int argc, string argv[])
         return 1;
     }
     // Validate that each alphbets in the key is unique.
-    for ()
+    for (int i = 0; i < strlen(key); i++)
+    {
+        for (int j = i + 1; j <  strlen(key))
+    }
 }
