@@ -28,4 +28,6 @@ int main(int argc, string argv[])
         printf("Key must contains 26 characters\n");
         return 1;
     }
+    // Validate that each alphbets in the key is unique.
+    for ()
 }
