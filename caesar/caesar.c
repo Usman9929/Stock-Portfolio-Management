@@ -11,7 +11,6 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar Key\n");
         return 1;
     }
-    else
 
         // Define the key.
         string key = argv[1];
