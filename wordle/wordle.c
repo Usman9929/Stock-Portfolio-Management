@@ -35,7 +35,7 @@ int main(int argc, string argv[])
 
     int wordsize = atoi(argv[1]);
 
-    if(atoi(argv[1]) < 5 || atoi(argv[1]) > 8)
+    if (atoi(argv[1]) < 5 || atoi(argv[1]) > 8)
     {
         printf("Error: wordsize must be either 5, 6, 7, or 8\n");
         return 1;
