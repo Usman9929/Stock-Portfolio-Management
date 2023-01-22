@@ -80,10 +80,10 @@ int main(int argc, string argv[])
         // array to hold guess status, initially set to zero
         int status[wordsize];
 
-        for (int j =0; j<wordsize; j++)
-            {
-                status[j]= 0;
-            }
+        for (int j = 0; j < wordsize; j++)
+        {
+                status[j] = 0;
+        }
 
         // Calculate score for the guess
         int score = check_word(guess, wordsize, status, choice);
@@ -101,7 +101,8 @@ int main(int argc, string argv[])
         }
     }
 
-    if(won == true) {
+    if( won == true)
+    {
         printf("You won!\n");
     }
     else{
