@@ -82,7 +82,7 @@ int main(int argc, string argv[])
 
         for (int j = 0; j < wordsize; j++)
         {
-                status[j] = 0;
+            status[j] = 0;
         }
 
         // Calculate score for the guess
@@ -101,11 +101,12 @@ int main(int argc, string argv[])
         }
     }
 
-    if( won == true)
+    if (won == true)
     {
         printf("You won!\n");
     }
-    else{
+    else
+    {
         printf("Word: %s\n", choice);
     }
     // that's all folks!
@@ -115,13 +116,15 @@ int main(int argc, string argv[])
 string get_guess(int wordsize)
 {
     string guess = "";
-    do {
-        guess =get_string("Input a %i-letter word: ",wordsize);
-        for (int i=0; i<strlen(guess); i++) {
+    do
+    {
+        guess = get_string("Input a %i-letter word: ", wordsize);
+        for (int i = 0; i < strlen(guess); i++)
+        {
             guess[i] = tolower(guess[i]);
         }
-        }
-    while(strlen(guess) !=wordsize);
+    }
+    while (strlen(guess) != wordsize);
 
     return guess;
 }
@@ -129,15 +132,15 @@ string get_guess(int wordsize)
 int check_word(string guess, int wordsize, int status[], string choice)
 {
     int score = 0;
-    int secret_count[26]={0};
-    int guess_count[26]={0};
+    int secret_count[26] = {0};
+    int guess_count[26] = {0};
     for (int i = 0; i < wordsize; i++)
     {
-        secret_count[tolower(choice[i])-'a']++;
+        secret_count[tolower(choice[i]) - 'a']++;
     }
     for (int i = 0; i < wordsize; i++)
     {
-        guess_count[tolower(guess[i])-'a']++;
+        guess_count[tolower(guess[i]) - 'a']++;
     }
     for (int i = 0; i < wordsize; i++)
     {
@@ -152,10 +155,11 @@ int check_word(string guess, int wordsize, int status[], string choice)
         if (status[i] != EXACT)
         {
             char c = tolower(guess[i]);
-            if(secret_count[c-'a']>0){
+            if (secret_count[c - 'a'] > 0)
+            {
                 score += CLOSE;
                 status[i] = CLOSE;
-                secret_count[c-'a']--;
+                secret_count[c - 'a']--;
             }
         }
     }
@@ -164,15 +168,19 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
 void print_word(string guess, int wordsize, int status[])
 {
-    for (int i = 0; i <wordsize; i++) {
-        if (status[i] == 2) {
-            printf(RED"%c"RESET,guess[i]);
+    for (int i = 0; i < wordsize; i++)
+    {
+        if (status[i] == 2)
+        {
+            printf(RED"%c"RESET, guess[i]);
         }
-        else if (status[i] == 1) {
-            printf(GREEN"%c"RESET,guess[i]);
+        else if (status[i] == 1)
+        {
+            printf(GREEN"%c"RESET, guess[i]);
         }
-        else {
-            printf(YELLOW"%c"RESET,guess[i]);
+        else
+        {
+            printf(YELLOW"%c"RESET, guess[i]);
         }
     }
 
