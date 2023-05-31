@@ -7,7 +7,7 @@ int main()
     {
         printf("You agreed:");
     }
-    else if(agree == 'n' && agree == 'N');
+    else if(agree == 'n' && agree == 'N')
     {
         printf("Not Agreed:");
     }
