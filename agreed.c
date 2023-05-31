@@ -3,24 +3,12 @@
 int main()
 {
     char agree = get_char ("Do you agreed ?");
-    if(agree == 'y')
+    if(agree == 'y' || agree == 'Y')
     {
         printf("You agreed:");
     }
-    else if(agree == 'Y')
+    else if(agree == 'Y' || agree == 'y')
     {
-        printf("Agreed");
-    }
-    else if(agree == 'n')
-    {
-        printf("Not Agreed:");
-    }
-    else if(agree == 'N')
-    {
-        printf("not Agreed");
-    }
-    else
-    {
-        printf("Please enter n or y");
+        printf("Not agreed");
     }
 }
