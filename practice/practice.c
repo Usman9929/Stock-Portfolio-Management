@@ -13,7 +13,7 @@ int get_size(void)
     int n;
     do
     {
-        n = printf("Size :");
+        n = get_int("Size :");
     }
     while(n < 1);
     return n;
