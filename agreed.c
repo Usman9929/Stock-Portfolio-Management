@@ -3,16 +3,12 @@
 int main()
 {
     char agree = get_char ("Do you agreed ?");
-    if(agree == 'y' && agree =='Y')
+    if(agree == 'y')
     {
         printf("You agreed:");
     }
-    else if(agree == 'n' && agree == 'N')
+    else if(agree == 'n')
     {
         printf("Not Agreed:");
-    }
-    else
-    {
-        printf("Please Enter N for No and Y for Yes:");
     }
 }
