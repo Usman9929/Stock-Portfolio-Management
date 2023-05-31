@@ -1,9 +1,14 @@
-#include <stdio.h>
 #include <cs50.h>
+#include <stdio.h>
 int main()
 {
-    while(true)
+    int n = 5;
+    for(int i = 0; i < n; i++)
     {
-        printf("Mew\n");
+        for(int j = 0; j < n; j++)
+        {
+            printf("#");
+        }
+        printf<<endl;
     }
 }
