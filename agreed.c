@@ -5,7 +5,7 @@ int main()
     char agree = get_char ("Do you agreed ?");
     if(agree == 'y' && agree =='Y')
     {
-        prinf("You agreed:");
+        printf("You agreed:");
     }
     else if(agree == 'n' && agree == 'N');
     {
