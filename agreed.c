@@ -11,4 +11,8 @@ int main()
     {
         printf("Not Agreed:");
     }
+    else
+    {
+        printf("Please Enter N for No and Y for Yes:");
+    }
 }
