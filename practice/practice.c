@@ -4,7 +4,7 @@ int get_size(void);
 void print_grid(int size);
 int main()
 {
-    get_size();
+   int n = get_size();
     print_grid(n);
 }
 
