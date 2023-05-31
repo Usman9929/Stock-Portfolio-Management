@@ -7,10 +7,10 @@ int main()
 
     if(x<y)
     {
-        printf("x is less than y");
+        printf("x is less than y\n");
     }
     else
     {
-        printf("Y is less than X");
+        printf("Y is less than X\n");
     }
 }
