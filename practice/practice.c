@@ -2,13 +2,19 @@
 #include <stdio.h>
 int main()
 {
-    int n = 9;
-    for(int i = 0; i < n; i++)
+   int n;
+   do
+   {
+    n = get_int("Size =");
+   }
+   while(n < 1);
+
+   for(int i = 0; i < n; i++)
+   {
+    for(int j = 0; j < n; j++)
     {
-        for(int j = 0; j < n; j++)
-        {
-            printf("#");
-        }
-        printf("\n");
+        printf("#");
     }
+    printf("\n");
+   }
 }
