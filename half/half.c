@@ -8,7 +8,7 @@ float half(float bill, float tax, int tip);
 
 int main(void)
 {
-    float bill_amo unt = get_float("Bill before tax and tip: ");
+    float bill_amo int = get_float("Bill before tax and tip: ");
     float tax_percent = get_float("Sale Tax Percent: ");
     int tip_percent = get_int("Tip percent: ");
 
