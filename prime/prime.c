@@ -31,7 +31,7 @@ int main(void)
 bool prime(int number)
 {
     // TODO
-    int i = 0;
+    int i = min;
     if(i / 2 != 0)
     {
     return false;
