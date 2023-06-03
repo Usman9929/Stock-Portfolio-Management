@@ -31,6 +31,10 @@ int main(void)
 bool prime(int number)
 {
     // TODO
-    
+    int i = 0;
+    if(i / 2 != 0)
+    {
     return false;
+    }
+    return true;
 }
