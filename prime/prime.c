@@ -31,6 +31,14 @@ int main(void)
 bool prime(int number)
 {
     // TODO
-    int i = (number % 2 != 0);
+    int i = number;
+
+  // loop to check if n is prime
+  for (int j = 2; j <= i/2; ++j) {
+    if (i % j == 0) {
+      return false;
+      break;
+    }
+  }
     return true;
 }
