@@ -32,7 +32,7 @@ bool prime(int number)
 {
     // TODO
     int i = number;
-    if(i / 2 != 0)
+    if(i / 2 == 0)
     {
     return false;
     }
