@@ -3,19 +3,23 @@
 
 int main(void)
 {
- int n;
+ int height;
  do
  {
-    n = get_int("Height: ");
+    height = get_int("Height: ");
  }
- while(n <= 0 || n > 8);
+ while(height <= 0 || height > 8);
 
-     for (int i = 0; i < n; i++)
-  {
-      for (int j = 0; j < n; j++)
-      {
-          printf("#");
-      }
-      printf("\n");
-  }
+for(int i = 0; i < height; height++)
+{
+    for(int k = height-i-1; k > 0; k--)
+    {
+        printf(" ");
+    }
+    for(int j = 0; j < i; j++)
+    {
+        printf("#");
+    }
+    printf("\n");
+}
 }
