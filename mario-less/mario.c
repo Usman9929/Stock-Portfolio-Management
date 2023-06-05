@@ -10,7 +10,7 @@ int main(void)
  }
  while(height <= 0 || height > 8);
 
-for(int i = 0; i < height; height++)
+for(int i = 0; i < height; i++)
 {
     for(int k = height-i-1; k > 0; k--)
     {
