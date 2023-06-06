@@ -4,6 +4,7 @@
 int main(void)
 {
     int height;
+    int l;
     do
     {
         height = get_int("Height: ");
@@ -19,11 +20,19 @@ int main(void)
         for(int j = 0; j <= i; j++)
         {
             printf("#");
-            for(int b = ; b > 0; b--)
-            {
-                printf("..");
-            }
         }
+        for(int b = 0; b < height; b++)
+    {
+        for(l = 0; l <= b; l++)
+        {
+            printf("#");
+        }
+        for(int c = height-j;c > 0; c--)
+        {
+            printf(".");
+        }
+        printf("\n");
+    }
         printf("\n");
     }
 }
