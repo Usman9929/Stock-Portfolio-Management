@@ -20,6 +20,11 @@ int main(void)
         {
             printf("#");
         }
+        printf("..");
+        for(int b = 0; b < height; b++)
+        {
+            printf("#");
+        }
         printf("\n");
     }
 }
