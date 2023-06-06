@@ -29,7 +29,7 @@ int main(void)
         }
         for(int c = height-l;c > 0; c--)
         {
-            printf(".");
+            printf("#");
         }
         printf("\n");
     }
