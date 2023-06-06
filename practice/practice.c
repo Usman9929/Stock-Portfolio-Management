@@ -4,13 +4,14 @@
 int main()
 {
     int n = get_int("Height: ");
+    int j;
     for(int i = 0; i < n; i++)
     {
-        for(int j = 0; j <= i; j++)
+        for(j = 0; j <= i; j++)
         {
             printf("#");
         }
-        for(int c = n;c > 0; c--)
+        for(int c = n-j;c > 0; c--)
         {
             printf(".");
         }
