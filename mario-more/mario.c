@@ -24,7 +24,7 @@ int main(void)
         {
             for(int f = 0; f < l; f++)
             {
-                printf("#");
+                printf("  ");
             }
         }
         printf("\n");
