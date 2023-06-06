@@ -20,7 +20,7 @@ int main(void)
         {
             printf("#");
         }
-        for(int b = 1; b < height; b++)
+        for(int b = 1; b < height-b-1; b++)
         {
             for(int c = 0; c < b; c++)
             {
