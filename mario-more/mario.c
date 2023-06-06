@@ -27,7 +27,7 @@ int main(void)
         {
             printf("#");
         }
-        for(int c = height-j;c > 0; c--)
+        for(int c = height-l;c > 0; c--)
         {
             printf(".");
         }
