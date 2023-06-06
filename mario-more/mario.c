@@ -20,14 +20,6 @@ int main(void)
         {
             printf("#");
         }
-        for(int b = 0; b < height; b++)
-    {
-        for(int c = 0; c <= b; c++)
-        {
-            printf("#");
-        }
-        printf("\n");
-    }
         printf("\n");
     }
 }
