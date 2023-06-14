@@ -1,10 +1,10 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int binarySearch(arr[], int size, int key)
+int binarySearch(int arr[], int size, int key)
 {
-    int star = 0;
-    int end = star-1;
+    int start = 0;
+    int end = start-1;
 
     int mid(start + end)/2;
 
@@ -17,13 +17,13 @@ int binarySearch(arr[], int size, int key)
 
         if(key > mid[arr])
         {
-            star = mid + 1;
+            start = mid + 1;
         }
         else
         {
             end = end - 1;
         }
-        mid = (star + end)/2;
+        mid = (start + end)/2;
 
     }
     return -1;
