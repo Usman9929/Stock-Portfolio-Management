@@ -1,20 +1,39 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int binarySearch(arr[], int size, int key)
+{
+    int star = 0;
+    int end = star-1;
+
+    int mid(start + end)/2;
+
+    while(start <= end)
+    {
+        if(arr[mid] == key)
+        {
+            return mid;
+        }
+
+        if(key > mid[arr])
+        {
+            star = mid + 1;
+        }
+        else
+        {
+            end = end - 1;
+        }
+        mid = (star + end)/2;
+
+    }
+    return -1;
+}
 int main()
 {
-    int n = get_int("Height: ");
-    int j;
-    for(int i = 0; i < n; i++)
-    {
-        for(j = 0; j <= i; j++)
-        {
-            printf("#");
-        }
-        for(int c = n-j;c > 0; c--)
-        {
-            printf(".");
-        }
-        printf("\n");
-    }
+    int even[6] = {2,4,6,8,10,12};
+    int odd[6] = {1,3,5,7,9,11};
+
+    int index = binarySearch(even, 6, 10);
+
+    printf("index of 10 is ,%i", index);
 }
