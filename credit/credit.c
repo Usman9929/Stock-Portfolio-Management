@@ -70,7 +70,9 @@ bool isValidAmex(long credit_card, int numDigits)
         return true;
     }
     else
+    {
         return false;
+    }
 }
 bool isValidMasterCard(long credit_card, int numDigits)
 {
@@ -80,7 +82,9 @@ bool isValidMasterCard(long credit_card, int numDigits)
         return true;
     }
     else
+    {
         return false;
+    }
 }
 int number_of_digits(long credit_card)
 {
