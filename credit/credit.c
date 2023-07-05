@@ -4,10 +4,10 @@
 
 int every_other_digit(long credit_card);
 int multiplyAndsum(int last_digit);
-int number_of_digits(long credit_card);
-bool isValidAmex(long credit_card, int numbDigits);
-bool isValidMasterCard(long credit_card, int numDigits);
-bool isValidVisa(long credit_card, int numDigits);
+int number_of_digits(long credit_card); // Find out the credit card numbers.
+bool isValidAmex(long credit_card, int numbDigits); // Check that if  credit card is Amex Card.
+bool isValidMasterCard(long credit_card, int numDigits); // Check if credit card is Master Card
+bool isValidVisa(long credit_card, int numDigits); // Check if credit card is Visa Card.
 
 int main(void)
 {
