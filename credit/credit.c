@@ -104,7 +104,7 @@ int every_other_digit(long credit_card)
     bool isAlternateDigit = false;
     while (credit_card > 0)
     {
-        if (isAlternateDigit == true)
+        if (isAlternateDigit == true) // Check that if alternative digit is true.
         {
             int last_digit = credit_card % 10;
             int product = multiplyAndsum(last_digit);
@@ -112,11 +112,11 @@ int every_other_digit(long credit_card)
         }
         else
         {
-            int last_digit = credit_card % 10; // Remove last digit
+            int last_digit = credit_card % 10;
             sum = sum + last_digit;           // Add last degit to sum.
         }
-        isAlternateDigit = !isAlternateDigit; // 
-        credit_card = credit_card / 10;
+        isAlternateDigit = !isAlternateDigit;
+        credit_card = credit_card / 10;       // Remove last digit
     }
     return sum;
 }
