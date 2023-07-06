@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int every_other_digit(long credit_card);
-int multiplyAndsum(int last_digit);
+int multiplyAndsum(int last_digit);                      // Function will be multiplying the number by two and adding the digits of the product.
 int number_of_digits(long credit_card);                  // Function for to Find out the credit card numbers.
 bool isValidAmex(long credit_card, int numbDigits);      // Function for Check that if  credit card is Amex Card.
 bool isValidMasterCard(long credit_card, int numDigits); // Function for Check that if credit card is Master Card
@@ -127,7 +127,7 @@ int multiplyAndsum(int last_digit) // Function will be multiplying the number by
 {
     int multiply = last_digit * 2;
     int sum = 0;
-    while (multiply > 0)
+    while (multiply > 0)  // Check if the number contains two digits
     {
         int last_digit_multiply = multiply % 10;
         sum = sum + last_digit_multiply;
