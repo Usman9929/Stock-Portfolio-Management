@@ -1,21 +1,12 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int get_negative_int(void);
-
 int main()
 {
-    int i = get_negative_int();
-    printf("%i\n", i);
-}
-
-int get_negative_int()
-{
-    int n;
-    do
+    int score[3];
+    for (int i = 0; i < 3; i++)
     {
-        n = get_int("Negative Interger: ");
+        score[i] = get_int("Score: ");
     }
-    while(n < 0);
-    return n;
+    printf("Average %f", score[1] + score[2] + score[3] / 3.0);
 }
