@@ -11,7 +11,7 @@ bool isValidVisa(long credit_card, int numDigits); // Function for Check that if
 
 int main(void)
 {
-    long credit_card = get_long("Credit Card: ");
+    long credit_card = get_long("Credit Card: "); // Get card number
     int sum_every_other_digit = every_other_digit(credit_card);
     int numDigits = number_of_digits(credit_card);
     bool amex = isValidAmex(credit_card, numDigits);
