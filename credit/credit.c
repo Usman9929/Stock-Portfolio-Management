@@ -112,10 +112,10 @@ int every_other_digit(long credit_card)
         }
         else
         {
-            int last_digit = credit_card % 10;
-            sum = sum + last_digit;
+            int last_digit = credit_card % 10; // Remove last digit
+            sum = sum + last_digit;           // Add last degit to sum.
         }
-        isAlternateDigit = !isAlternateDigit;
+        isAlternateDigit = !isAlternateDigit; // 
         credit_card = credit_card / 10;
     }
     return sum;
