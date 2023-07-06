@@ -123,7 +123,7 @@ int every_other_digit(long credit_card)
     return sum;
 }
 
-int multiplyAndsum(int last_digit)
+int multiplyAndsum(int last_digit) // Function will be multiplying the number by two and adding the digits of the product.
 {
     int multiply = last_digit * 2;
     int sum = 0;
