@@ -3,6 +3,8 @@
 
 int main()
 {
-    string name = get_string("What is your name:");
-    printf("hello, %s\n", name);
+    for(int i = 0; i <= 3; i++)
+    {
+        printf("#\n");
+    }
 }
