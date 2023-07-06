@@ -115,7 +115,7 @@ int every_other_digit(long credit_card)
             int last_digit = credit_card % 10;
             sum = sum + last_digit;           // Add last degit to sum.
         }
-        isAlternateDigit = !isAlternateDigit;
+        isAlternateDigit = !isAlternateDigit; // Change the alternate value 
         credit_card = credit_card / 10;       // Remove last digit
     }
     return sum;
