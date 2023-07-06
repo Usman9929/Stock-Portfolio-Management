@@ -8,5 +8,5 @@ int main()
     {
         score[i] = get_int("Score: ");
     }
-    printf("Average %f", score[1] + score[2] + score[3] / 3.0);
+    printf("Average %f\n", score[0] + score[1] + score[2] / (float) 3);
 }
