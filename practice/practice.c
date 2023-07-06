@@ -14,7 +14,7 @@ int get_negative_int()
     int n;
     do
     {
-        n = get_int("Negative interger: ");
+        n = get_int("Negative Interger: ");
     }
     while(n < 0);
     return n;
