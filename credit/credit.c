@@ -3,11 +3,16 @@
 #include <stdio.h>
 
 int every_other_digit(long credit_card);
-int multiplyAndsum(int last_digit);                      // Function will be multiplying the number by two and adding the digits of the product.
-int number_of_digits(long credit_card);                  // Function for to Find out the credit card numbers.
-bool isValidAmex(long credit_card, int numbDigits);      // Function for Check that if  credit card is Amex Card.
-bool isValidMasterCard(long credit_card, int numDigits); // Function for Check that if credit card is Master Card
-bool isValidVisa(long credit_card, int numDigits);       // Function for Check that if credit card is Visa Card.
+int multiplyAndsum(int last_digit);
+// Function will be multiplying the number by two and adding the digits of the product.
+int number_of_digits(long credit_card);
+// Function for to Find out the credit card numbers.
+bool isValidAmex(long credit_card, int numbDigits);
+// Function for Check that if  credit card is Amex Card.
+bool isValidMasterCard(long credit_card, int numDigits);
+// Function for Check that if credit card is Master Card
+bool isValidVisa(long credit_card, int numDigits);
+// Function for Check that if credit card is Visa Card.
 
 int main(void)
 {
@@ -113,10 +118,12 @@ int every_other_digit(long credit_card)
         else
         {
             int last_digit = credit_card % 10; // we're gonna get the last digit.
-            sum = sum + last_digit;           // Add last degit to sum.
+            sum = sum + last_digit;            // Add last degit to sum.
         }
-        isAlternateDigit = !isAlternateDigit; /* we have to change the value of this alternate digit to the opposite value of this alternate digit so we always we're gonna in one case we're gonna be true in the other case false true and false.*/
-        credit_card = credit_card / 10;       // Remove last digit
+        isAlternateDigit =
+            !isAlternateDigit; /* we have to change the value of this alternate digit to the opposite value of this alternate digit
+                                  so we always we're gonna in one case we're gonna be true in the other case false true and false.*/
+        credit_card = credit_card / 10; // Remove last digit
     }
     return sum;
 }
@@ -125,7 +132,7 @@ int multiplyAndsum(int last_digit) // Function will be multiplying the number by
 {
     int multiply = last_digit * 2;
     int sum = 0;
-    while (multiply > 0)  // Check if the number contains two digits
+    while (multiply > 0) // Check if the number contains two digits
     {
         int last_digit_multiply = multiply % 10;
         sum = sum + last_digit_multiply;
