@@ -1,15 +1,12 @@
 #include <stdio.h>
-#include <cs50.h>
-#include <ctype.h>
-#include <string.h>
 
 int main()
 {
-   string s = get_string("Before: ");
-   printf("After: ");
-   for(int i = 0; i < strlen(s); i++)
+   int foo[4] = {30,40,59,30,23};
+   int bar[4];
+   for(int j = 0; j < 5; j++)
    {
-    printf("%c", toupper(s[i]));
+      bar[j] = foo[j];
    }
-   printf("\n");
+   printf("%i", bar[j]);
 }
