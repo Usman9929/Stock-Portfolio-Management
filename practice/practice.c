@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void set_arrauy(int array[4]);
+void set_array(int array[4]);
 void set_int(int x);
 
 int main()
