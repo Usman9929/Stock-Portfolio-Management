@@ -8,8 +8,9 @@
 
 int main(int argc, string argv[])
 {
-    if(argc != 2)
+    do
     {
         printf("Usage:\n");
     }
+    while(argc != 2);
 }
