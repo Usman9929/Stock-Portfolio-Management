@@ -30,7 +30,7 @@ float calc_hours(int hours[], int weeks, char output)
     int j;
     float sum = 0;
     float avg = 0;
-    if(output == 'T' || output == 'T')
+    if(output == 'T' || output == 't')
     {
          for(j = 0; j < weeks; j++)
     {
