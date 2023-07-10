@@ -46,7 +46,7 @@ string replace(string input)
             output[i] = '0';
             break;
             default:
-            output[i] = c;
+            output[i] = input[i];
             break;
         }
     }
