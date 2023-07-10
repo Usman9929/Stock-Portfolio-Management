@@ -29,13 +29,9 @@ float calc_hours(int hours[], int weeks, char output)
 {
     int j;
     float sum = 0;
-    float avg = 0;
-    if (output == 't' && output == 'T')
+    for(j = 0; j < weeks; j++)
     {
-        for (j = 0; j < weeks; j++)
-        {
-            sum += hours[j];
-        }
+        sum += hours[j];
     }
     return sum;
 }
