@@ -5,8 +5,10 @@
 
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
-string replace(string take);
+string replace(string input);
 
 int main(int argc, string argv[])
 {
@@ -15,12 +17,34 @@ int main(int argc, string argv[])
         printf("Usage: ");
         return 1;
     }
-    else
-    {
-        printf("Hello:\n");
-    }
+
+    string 
 }
-string replace(sring take)
+string replace(string input)
 {
-    switch
+    string output = input;
+    for(int i = 0; i < strlen(output); i++)
+    {
+        char c = tolower(input[i]);
+
+        switch(c)
+        {
+            case 'a':
+            output[i] = '6';
+            break;
+            case 'e':
+            output[i] = '3';
+            break;
+            case 'i':
+            output[i] = '1';
+            break;
+            case 'o':
+            output[i] = '0';
+            break;
+            default:
+            output[i] = c;
+            break;
+        }
+    }
+    return output;
 }
