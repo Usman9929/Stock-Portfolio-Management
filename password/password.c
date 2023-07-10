@@ -44,7 +44,7 @@ bool valid(string password)
         {
             checkisdigit = true;
         }
-        if(isalnum(password[i]))
+        if(!isalnum(password[i]))
         {
             checksymbol = true;
         }
