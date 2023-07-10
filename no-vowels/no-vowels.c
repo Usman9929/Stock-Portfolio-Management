@@ -18,9 +18,11 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    string word = replace(word);
+    string word = argv[1];
 
-    printf("%s", word);
+    string result = replace(word);
+
+    printf("%s\n", word);
 }
 string replace(string input)
 {
