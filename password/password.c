@@ -27,29 +27,29 @@ bool valid(string password)
 {
     float checkislower = false;
     float checkisupper = false;
-    float checkisdgit = false;
+    float checkisdigit = false;
     float checksymbol = false;
 
     for(int i = 0; i < strlen(password); i++)
     {
-        if(islower == password[i])
+        if(islower(password[i]))
         {
             checkislower = true;
         }
-        if(isupper == password[i])
+        if(isupper(password[i]))
         {
             checkisupper = true;
         }
-        if(isdigit == password[i])
+        if(isdigit(password[i]))
         {
-            checkisdigit = ture;
+            checkisdigit = true;
         }
-        if(isalnum == password[i])
+        if(isalnum(password[i]))
         {
             checksymbol = true;
         }
     }
-    if(checkislower == true && checkispper == true && checkisdigit == true && checksymbol == true)
+    if(checkislower == true && checkisupper == true && checkisdigit == true && checksymbol == true)
     {
         return true;
     }
