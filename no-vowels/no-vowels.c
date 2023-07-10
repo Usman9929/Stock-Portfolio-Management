@@ -10,6 +10,10 @@ int main(int argc, string argv[])
 {
     if(argc != 2)
     {
-        printf("Usage %s:\n", argv[1]);
+        printf("Usage: ");
+    }
+    else
+    {
+        printf("Hello:\n");
     }
 }
