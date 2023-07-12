@@ -49,5 +49,5 @@ int compute_score(string word)
             score = POINTS[word[i] - 'A'];
         }
     }
-    return socre;
+    return score;
 }
