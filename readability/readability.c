@@ -14,7 +14,7 @@ int main(void)
     int total_word = count_words(text);
     int total_sentences = count_sentence(text);
 
-    printf("%i\n%i\n %i\n", total, total_word, total_sentences);
+    printf("%i\n%i\n%i\n", total, total_word, total_sentences);
 
 }
 
@@ -49,7 +49,7 @@ int count_sentence(string text)
     int total_sentence = 0;
     for(int i = 0; i < strlen(text); i++)
     {
-        if(text[i] == '.' && text[i] == '!' && text[i] == '?')
+        if(text[i] == '.' || text[i] == '!' || text[i] == '?')
         {
             total_sentence++;
         }
