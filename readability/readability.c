@@ -10,14 +10,14 @@ int count_sentence(string text);
 int main(void)
 {
     string text = get_string("Text:");
-    int total = count_latters(text);
+    int total_latter = count_latters(text);
     int total_word = count_words(text);
     int total_sentences = count_sentence(text);
 
-    float L = (float) total / (float) count_words * 100;
-    float S = (float) total_sentences / (float) count_words * 100;
+    float L = (float) total_latter / (float) total_word * 100;
+    float S = (float) total_sentences / (float) total_word * 100;
 
-    float index = 0.0588 * L 0.296 * S - 15.8;
+    float index = (0.0588 * L - 0.296 * S - 15.8 );
 
     if (index < 1)
     {
