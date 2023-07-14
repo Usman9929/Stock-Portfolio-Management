@@ -1,7 +1,7 @@
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 int count_latters(string text);
 int count_words(string text);
@@ -14,18 +14,20 @@ int main(void)
     int total_word = count_words(text);
     int total_sentences = count_sentence(text);
 
-    int l = total
+    float L = (float) total / (float) count_words * 100;
+    float S = (float) total_sentences / (float) count_words * 100;
+
+    float index = 0.0588 * L 0.296 * S - 15.8;
 
     printf("%i\n%i\n%i\n", total, total_word, total_sentences);
-
 }
 
 int count_latters(string text)
 {
     int total_latters = 0;
-    for(int i = 0; i < strlen(text); i++)
+    for (int i = 0; i < strlen(text); i++)
     {
-        if(isupper(text[i]) || islower(text[i]) || isalnum(text[i]))
+        if (isupper(text[i]) || islower(text[i]) || isalnum(text[i]))
         {
             total_latters++;
         }
@@ -36,9 +38,9 @@ int count_latters(string text)
 int count_words(string text)
 {
     int total_words = 1;
-    for(int i = 0; text[i] != '\0'; i++)
+    for (int i = 0; text[i] != '\0'; i++)
     {
-        if(text[i] == ' ')
+        if (text[i] == ' ')
         {
             total_words++;
         }
@@ -49,12 +51,12 @@ int count_words(string text)
 int count_sentence(string text)
 {
     int total_sentence = 0;
-    for(int i = 0; i < strlen(text); i++)
+    for (int i = 0; i < strlen(text); i++)
     {
-        if(text[i] == '.' || text[i] == '!' || text[i] == '?')
+        if (text[i] == '.' || text[i] == '!' || text[i] == '?')
         {
             total_sentence++;
         }
     }
-     return total_sentence;
+    return total_sentence;
 }
