@@ -17,11 +17,13 @@ int main(void)
     int total_word = count_words(text);         // Counting Words
     int total_sentences = count_sentence(text); // Counting Sentences
 
+    // Calculation
     float L = (float) total_latter / (float) total_word * 100;
     float S = (float) total_sentences / (float) total_word * 100;
-
+    // Round the result using math.h library.
     int index = round(0.0588 * L - 0.296 * S - 15.8);
 
+    // Print the grades on the screen.
     if (index < 1)
     {
         printf("Before Grade 1\n");
@@ -41,7 +43,7 @@ int count_latters(string text)
     int total_latters = 0;
     for (int i = 0; i < strlen(text); i++)
     {
-        if (isupper(text[i]) || islower(text[i]) || isalnum(text[i]))
+        if (isupper(text[i]) || islower(text[i]) || isalnum(text[i])) // Check that text is upper, lower
         {
             total_latters++;
         }
