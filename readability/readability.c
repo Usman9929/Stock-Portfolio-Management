@@ -34,11 +34,11 @@ int count_words(string text)
     int total_words = 0;
     for(int i = 0; text[i] != '\0'; i++)
     {
-        if(text[i] == ' ' && text[i + 1] != ' ')
+        if(text[i] == ' ')
         {
             total_words++;
         }
     }
-    return total_words + 1;
+    return total_words;
 }
 
