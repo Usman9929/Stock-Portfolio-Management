@@ -9,11 +9,10 @@ int count_words(string text);
 int main(void)
 {
     string text = get_string("Text:");
-    // int total = count_latters(text);
+    int total = count_latters(text);
     int total_word = count_words(text);
 
-   // printf("%i\n", total);
-    printf("%i\n", total_word);
+    printf("%i\n%i\n", total, total_word);
 
 }
 
@@ -32,14 +31,14 @@ int count_latters(string text)
 
 int count_words(string text)
 {
-    int total_words = 1;
-    for(int i = 0; strlen(text); i++)
+    int total_words = 0;
+    for(int i = 0; text[i] != '\0'; i++)
     {
-        if(text[i] == ' ' && text[i + 1] == ' ')
+        if(text[i] == ' ' && text[i + 1] != ' ')
         {
             total_words++;
         }
     }
-    return total_words;
+    return total_words + 1;
 }
 
