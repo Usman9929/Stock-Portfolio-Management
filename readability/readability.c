@@ -29,7 +29,7 @@ int main(void)
     }
     else
     {
-        printf("Grade %i\n", index);
+        printf("Grade %f\n", index);
     }
 }
 
