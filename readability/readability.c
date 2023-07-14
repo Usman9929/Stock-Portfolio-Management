@@ -4,6 +4,7 @@
 #include <ctype.h>
 
 int count_latters(string text);
+int count_words(string text);
 
 int main(void)
 {
@@ -25,5 +26,12 @@ int count_latters(string text)
         }
     }
     return total_latters;
+}
+
+int count_words(string text)
+{
+    int total_words = 0;
+    for(int i = )
+
 }
 
