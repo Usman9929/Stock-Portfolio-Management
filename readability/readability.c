@@ -14,6 +14,8 @@ int main(void)
     int total_word = count_words(text);
     int total_sentences = count_sentence(text);
 
+    int l = total
+
     printf("%i\n%i\n%i\n", total, total_word, total_sentences);
 
 }
