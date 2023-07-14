@@ -21,8 +21,9 @@ int count_latters(string text)
     {
         if(isupper(text[i]) || islower(text[i]) || isalnum(text[i]))
         {
-            total_latters = strlen(text[i]);
+            total_latters++;
         }
     }
     return total_latters;
 }
+
