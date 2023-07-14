@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 int count_latters(string text);
 int count_words(string text);
@@ -17,7 +18,7 @@ int main(void)
     float L = (float) total_latter / (float) total_word * 100;
     float S = (float) total_sentences / (float) total_word * 100;
 
-    float index = (0.0588 * L - 0.296 * S - 15.8 );
+    int index = round(0.0588 * L - 0.296 * S - 15.8 );
 
     if (index < 1)
     {
@@ -29,7 +30,7 @@ int main(void)
     }
     else
     {
-        printf("Grade %f\n", index);
+        printf("Grade %i\n", index);
     }
 }
 
