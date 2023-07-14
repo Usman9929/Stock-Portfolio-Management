@@ -19,12 +19,18 @@ int main(void)
 
     float index = 0.0588 * L 0.296 * S - 15.8;
 
-    if(index  1)
+    if (index < 1)
     {
-        printf()
+        printf("Before Grade 1\n");
     }
-
-    printf("%i\n%i\n%i\n", total, total_word, total_sentences);
+    else if (index > 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        printf("Grade %i\n", index);
+    }
 }
 
 int count_latters(string text)
