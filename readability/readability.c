@@ -47,7 +47,7 @@ int count_words(string text)
 int count_sentence(string text)
 {
     int total_sentence = 0;
-    for(int i = 0; i < strlen(text[i]); i++)
+    for(int i = 0; i < strlen(text); i++)
     {
         if(text[i] == '.' && text[i] == '!' && text[i] == '?')
         {
