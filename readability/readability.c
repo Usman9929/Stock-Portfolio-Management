@@ -43,7 +43,8 @@ int count_latters(string text)
     int total_latters = 0;
     for (int i = 0; i < strlen(text); i++)
     {
-        if (isupper(text[i]) || islower(text[i]) || isalnum(text[i])) // Check that text is upper, lower
+        if (isupper(text[i]) || islower(text[i]) ||
+            isalnum(text[i])) // Check that text is upper, isalnum mean checks whether a character is alphabet or number.
         {
             total_latters++;
         }
