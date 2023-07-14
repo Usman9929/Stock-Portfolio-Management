@@ -35,7 +35,7 @@ int count_words(string text)
     int total_words = 0;
     for(int i = 0; strlen(text); i++)
     {
-        if(text[i] == ' ' && text[i] == '.')
+        if(text[i] == ' ')
         {
             total_words++;
         }
