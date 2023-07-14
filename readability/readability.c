@@ -31,7 +31,10 @@ int count_latters(string text)
 int count_words(string text)
 {
     int total_words = 0;
-    for(int i = )
+    for(int i = strlen(text); i++)
+    {
+        if(text[i] != ' ' && text[i] != 0; && )
+    }
 
 }
 
