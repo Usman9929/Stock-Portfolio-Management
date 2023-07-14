@@ -5,6 +5,7 @@
 
 int count_latters(string text);
 int count_words(string text);
+int count_sentence(string text);
 
 int main(void)
 {
@@ -40,5 +41,11 @@ int count_words(string text)
         }
     }
     return total_words;
+}
+
+int count_sentence(string text)
+{
+    int total_sentence = 0;
+    
 }
 
