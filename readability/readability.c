@@ -53,7 +53,6 @@ int count_sentence(string text)
         {
             total_sentence++;
         }
-        return total_sentence;
     }
+     return total_sentence;
 }
-
