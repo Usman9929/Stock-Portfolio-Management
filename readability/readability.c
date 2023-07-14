@@ -1,24 +1,26 @@
 #include <cs50.h>
 #include <ctype.h>
+#include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 
-int count_latters(string text);
-int count_words(string text);
-int count_sentence(string text);
+// Function Protoypes.
+int count_latters(string text);  // Fucntion for Counting letters.
+int count_words(string text);    // Function for Counting Sentences.
+int count_sentence(string text); // Fucntion for Counting Sentences.
 
 int main(void)
 {
+    // Prompt user
     string text = get_string("Text:");
-    int total_latter = count_latters(text);
-    int total_word = count_words(text);
-    int total_sentences = count_sentence(text);
+    int total_latter = count_latters(text);     // Counting letters
+    int total_word = count_words(text);         // Counting Words
+    int total_sentences = count_sentence(text); // Counting Sentences
 
     float L = (float) total_latter / (float) total_word * 100;
     float S = (float) total_sentences / (float) total_word * 100;
 
-    int index = round(0.0588 * L - 0.296 * S - 15.8 );
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
 
     if (index < 1)
     {
