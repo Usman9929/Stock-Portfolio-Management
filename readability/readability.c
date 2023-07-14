@@ -12,8 +12,9 @@ int main(void)
     string text = get_string("Text:");
     int total = count_latters(text);
     int total_word = count_words(text);
+    int total_sentences = count_sentence(text);
 
-    printf("%i\n%i\n", total, total_word);
+    printf("%i\n%i\n %i\n", total, total_word, total_sentences);
 
 }
 
@@ -46,6 +47,13 @@ int count_words(string text)
 int count_sentence(string text)
 {
     int total_sentence = 0;
-    
+    for(int i = 0; i < strlen(text[i]); i++)
+    {
+        if(text[i] == '.' && text[i] == '!' && text[i] == '?')
+        {
+            total_sentence++;
+        }
+        return total_sentence;
+    }
 }
 
