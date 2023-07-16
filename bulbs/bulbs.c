@@ -19,6 +19,7 @@ int main(void)
             decimal = text[i];
         }
     }
+    printf("%i\n", decimal);
 
 }
 
