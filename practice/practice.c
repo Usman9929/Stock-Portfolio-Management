@@ -4,6 +4,8 @@
 #include <ctype.h>
 #include <stdlib.h>
 
+int obtain_cipertext(string text);
+
 int main(int argc, string argv[])
 {
     if(argc != 2)
@@ -20,9 +22,12 @@ int main(int argc, string argv[])
                 return 1;
             }
         }
-        int k = atoi(argv[1]);
         string plaintext = get_string("Plaintext: ");
         printf("ciphertext: ");
+
+}
+int obtain_cipertext(string text);
+{
 
         for(int j = 0; j < strlen(plaintext); j++)
         {
@@ -40,5 +45,4 @@ int main(int argc, string argv[])
             }
         }
         printf("\n");
-
 }
