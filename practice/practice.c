@@ -24,7 +24,7 @@ int main(int argc, string argv[])
         string plaintext = get_string("Plaintext: ");
         printf("ciphertext: ");
 
-        for(int j = 0; j < strlen(palaintext); j++)
+        for(int j = 0; j < strlen(plaintext); j++)
         {
             if(isupper(plaintext[j]))
             {
@@ -32,7 +32,7 @@ int main(int argc, string argv[])
             }
             else if(islower(plaintext[j]))
             {
-                printf("%c", plaintext[i] - 97 + k % 26 + 97);
+                printf("%c", plaintext[j] - 97 + k % 26 + 97);
             }
             else
             {
