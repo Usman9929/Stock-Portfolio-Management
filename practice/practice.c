@@ -1,21 +1,31 @@
 #include <stdio.h>
 
-void set_array(int array[4]);
-void set_int(int x);
+void decimalToBinary(int decimal) {
+    int binary[32];  // Assuming 32-bit binary representation is sufficient
+    int i = 0;
 
-int main()
-{
-   int a = 10;
-   int b[4] = {0,1,2,3};
-   set_int(a);
-   set_array(b);
-   printf("%i, %i\n", a, b[0]);
+    // Step 3: Perform repeated division
+    while (decimal > 0) {
+        binary[i] = decimal % 2;  // Step 4: Store remainder
+        decimal = decimal / 2;
+        i++;
+    }
+
+    // Step 5: Reverse the array and print the binary representation
+    printf("Binary representation: ");
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%d", binary[j]);
+    }
+    printf("\n");
 }
-void set_array(int array[4])
-{
-   array[0] = 22;
-}
-void set_int(int x)
-{
-   x = 22;
+
+int main() {
+    int decimal;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    decimalToBinary(decimal);
+
+    return 0;
 }
