@@ -18,7 +18,7 @@ int main(void)
         if(isupper(text[i]) || islower(text[i]))
         {
             decimal = text[i];
-            binary[i] = decimal
+            binary[i] = decimal % 2
         }
     }
     printf("%i\n", decimal);
