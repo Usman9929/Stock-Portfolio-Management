@@ -12,12 +12,13 @@ int main(void)
     // TODO
     string text = get_string("Messege:");
     int decimal = 0;
+    int binary[8];
     for(int i = 0; i < strlen(text); i++)
     {
         if(isupper(text[i]) || islower(text[i]))
         {
             decimal = text[i];
-            
+            binary[i] = decimal
         }
     }
     printf("%i\n", decimal);
