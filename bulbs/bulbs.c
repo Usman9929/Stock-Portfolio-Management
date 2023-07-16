@@ -17,6 +17,7 @@ int main(void)
         if(isupper(text[i]) || islower(text[i]))
         {
             decimal = text[i];
+            
         }
     }
     printf("%i\n", decimal);
