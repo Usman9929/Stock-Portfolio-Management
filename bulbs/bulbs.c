@@ -16,7 +16,7 @@ int main(void)
     {
         if(isupper(text[i]) || isupper(text[i]))
         {
-            decimal += text[i];
+            decimal = text[i];
         }
     }
 
