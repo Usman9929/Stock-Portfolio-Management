@@ -14,7 +14,7 @@ int main(void)
     int decimal = 0;
     for(int i = 0; i < strlen(text); i++)
     {
-        if(isupper(text[i]) || isupper(text[i]))
+        if(isupper(text[i]) || islower(text[i]))
         {
             decimal = text[i];
         }
