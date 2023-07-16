@@ -1,31 +1,24 @@
+#include <cs50.h>
+#include <string.h>
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 
-void decimalToBinary(int decimal) {
-    int binary[32];  // Assuming 32-bit binary representation is sufficient
-    int i = 0;
-
-    // Step 3: Perform repeated division
-    while (decimal > 0) {
-        binary[i] = decimal % 2;  // Step 4: Store remainder
-        decimal = decimal / 2;
-        i++;
+int main(int argc, string argv[])
+{
+    if(argc != 2)
+    {
+        printf("Usage: ./caesar key\n");
     }
 
-    // Step 5: Reverse the array and print the binary representation
-    printf("Binary representation: ");
-    for (int j = i - 1; j >= 0; j--) {
-        printf("%d", binary[j]);
+    for(int i = 0; i < strlen(argv[1]); i++)
+    {
+        {
+            if(!isdigit(argv[1][i]))
+            {
+                printf("Usage: ./caesar key\n");
+            }
+        }
+
     }
-    printf("\n");
-}
-
-int main() {
-    int decimal;
-
-    printf("Enter a decimal number: ");
-    scanf("%d", &decimal);
-
-    decimalToBinary(decimal);
-
-    return 0;
 }
