@@ -17,6 +17,6 @@ int main(int argc, string argv[])
     }
     while(argv[] == argv[])
     {
-        printf("Key must not contain)
+        printf("Key must not contain repeated characters:");
     }
 }
