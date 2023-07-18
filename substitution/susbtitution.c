@@ -17,11 +17,14 @@ int main(int argc, string argv[])
     }
     for(int i = 0; i < strlen(argv); i++)
     {
-        for(int j = 0; j < )
-        if(argv[i] == argv[i])
+        for(int j = 0; j < strlen(argv); i++)
         {
-            printf("Key must not contain repeated charactors:");
-            return 1;
+            if(toupper(argv[i]) == toupper(argv[j]))
+            {
+                printf("Key must not contains repeated charactors:");
+                return 1;
+
+            }
         }
-    }
+        }
 }
