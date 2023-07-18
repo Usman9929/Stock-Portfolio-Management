@@ -17,7 +17,7 @@ int main(int argc, string argv[])
     }
     for(int i = 0; i < strlen(argv); i++)
     {
-        for(int j = 0; j < strlen(argv); i++)
+        for(int j = i + 1; j < strlen(argv); i++)
         {
             if(toupper(argv[i]) == toupper(argv[j]))
             {
