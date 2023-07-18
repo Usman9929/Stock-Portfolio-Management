@@ -10,10 +10,13 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key");
         return 1;
     }
-    while(strlen(argv[]) < 26)
+    while(strlen(argv[]) < 26 || argv[])
     {
         printf("Key must contain 26 characters.");
         return 1;
     }
-    printf("plaintext: ");
+    while(argv[] == argv[])
+    {
+        printf(")
+    }
 }
