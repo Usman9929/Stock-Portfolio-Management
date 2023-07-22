@@ -12,11 +12,12 @@ int main()
     printf("\n");
 }
 
-int factorial(int fact)
+int factorial(int n)
 {
-    int j = 0;
-    for(int k = fact; k > 0; k++)
+    int result = 1;
+    for(int k = 1; k <= n; k++)
     {
-        
+        result *= k;
     }
+    return result;
 }
