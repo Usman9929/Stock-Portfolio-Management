@@ -14,10 +14,10 @@ int main()
 
 int factorial(int fact)
 {
-    int j = fact;
-    for(int i = 1; i <= fact; i++)
+    int j = 0;
+    for(int i = 1; int k = fact; i <= fact; i++; k--)
     {
-       j = fact * i;
+       j = k * i;
     }
     return j;
 }
