@@ -15,7 +15,7 @@ int main()
 int factorial(int fact)
 {
     int j = fact;
-    for(int i = fact; i < fact - i; i++)
+    for(int i = 1; i <= fact; i++)
     {
        j = fact * i;
     }
