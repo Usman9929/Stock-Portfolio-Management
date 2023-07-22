@@ -26,5 +26,11 @@ int main(void)
 int convert(string input)
 {
     // TODO
-    if(strcmp(input,))
+    int length = strlen(input)
+
+    if(length == 1)
+    {
+        return 1;
+    }
+    
 }
