@@ -30,7 +30,7 @@ int convert(string input)
 
     if(length == 1)
     {
-        return 1;
+        return input[0] - '0';
     }
-    
+
 }
