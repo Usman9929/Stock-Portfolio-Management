@@ -26,12 +26,16 @@ int main(void)
 int convert(string input)
 {
     // TODO
-    int length = strlen(input)
+    int length = strlen(input);
 
     if(length == 1)
     {
         return input[0] - '0';
     }
-    
+    char last_digit = input[length-1];
 
+    input[length - 1] = '\0';
+
+    int convert_last_digit = last_digit - '0';
+    return convert_last_digit + 10 * convert(input);
 }
