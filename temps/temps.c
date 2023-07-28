@@ -64,11 +64,11 @@ void sort_cities(void)
 {
     // Add your code here
    int t, u, i;
-   for(i = 9; i >= 1; i--)
+   for(u = 9; u >= 1; u--)
    {
-    for(u = 0; u < i; u++)
+    for(i = 0; i < u; i++)
     {
-        if(temps[i].temp > temps[i+1].temp)
+        if(temps[i].temp <>> temps[i+1].temp)
         {
             t = temps[i].temp;
             temps[i].temp = temps[i+1].temp;
