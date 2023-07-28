@@ -62,6 +62,10 @@ int main(void)
 void sort_cities(void)
 {
     // Add your code here
+    int n = NUM_CITIES;
+
+    avg_temp temp;
+
     int t, u, i;
     for (u = 9; u >= 1; u--)
     {
@@ -69,9 +73,9 @@ void sort_cities(void)
         {
             if (temps[i].temp < temps[i + 1].temp)
             {
-                t = temps[i].temp;
+                temp = temps[i].temp;
                 temps[i].temp = temps[i + 1].temp;
-                temps[i + 1].temp = t;
+                temps[i + 1].temp = temp;
             }
         }
     }
