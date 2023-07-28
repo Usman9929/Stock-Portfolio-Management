@@ -10,7 +10,7 @@ int main(void)
     int n;
     do
     {
-3        n = get_int("Number of elements: ");
+        n = get_int("Number of elements: ");
     }
     while (n < 1);
 
