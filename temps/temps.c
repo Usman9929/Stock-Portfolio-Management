@@ -63,13 +63,10 @@ int main(void)
 void sort_cities(void)
 {
     // Add your code here
-    int j = 0;
-    for(int i = 0; i < 9; i++)
-    {
-        if(j < temps.temps[i])
-        {
-            j = temps.temps[i];
-        }
+   int check = temps[0];
+   for(int i = 0; i < NUM_CITIES; i++)
+   {
+    if()
+   }
 
-    }
 }
