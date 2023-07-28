@@ -63,12 +63,12 @@ int main(void)
 void sort_cities(void)
 {
     // Add your code here
-   int 
-   for(int i = 0; i < NUM_CITIES; i++)
+   int t, u, i;
+   for(i = 9; i >= 1; i--)
    {
-    if(check < temps[i].temp)
+    for(u = 0; u < i; u++)
     {
-        check = temps[i].temp;
-   }
+        
+    }
    }
 }
