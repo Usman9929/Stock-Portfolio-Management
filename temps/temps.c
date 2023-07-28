@@ -66,9 +66,9 @@ void sort_cities(void)
    int check = temps[0].temp;
    for(int i = 0; i < NUM_CITIES; i++)
    {
-    if(check < temps[i].temps)
+    if(check < temps[i].temp)
     {
-        check = temps[i].temps;
+        check = temps[i].temp;
    }
    }
 }
