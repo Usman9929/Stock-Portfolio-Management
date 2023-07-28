@@ -66,16 +66,16 @@ void sort_cities(void)
 
     avg_temp temp;
 
-    int t, u, i;
+    int u, i;
     for (u = 9; u >= 1; u--)
     {
         for (i = 0; i < u; i++)
         {
             if (temps[i].temp < temps[i + 1].temp)
             {
-                temp = temps[i].temp;
-                temps[i].temp = temps[i + 1].temp;
-                temps[i + 1].temp = temp;
+                temp = temps[i];
+                temps[i] = temps[i + 1];
+                temps[i + 1] = temp;
             }
         }
     }
