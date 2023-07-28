@@ -68,7 +68,12 @@ void sort_cities(void)
    {
     for(u = 0; u < i; u++)
     {
-        
+        if(temps[i].temp > temps[i+1].temp)
+        {
+            t = temps[i].temp;
+            temps[i].temp = temps[i+1].temp;
+            temps[i+1].temp = t;
+        }
     }
    }
 }
