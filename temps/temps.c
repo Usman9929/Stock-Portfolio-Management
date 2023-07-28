@@ -10,8 +10,7 @@ typedef struct
 {
     string city;
     int temp;
-}
-avg_temp;
+} avg_temp;
 
 avg_temp temps[NUM_CITIES];
 
@@ -63,17 +62,17 @@ int main(void)
 void sort_cities(void)
 {
     // Add your code here
-   int t, u, i;
-   for(u = 9; u >= 1; u--)
-   {
-    for(i = 0; i < u; i++)
+    int t, u, i;
+    for (u = 9; u >= 1; u--)
     {
-        if(temps[i].temp <>> temps[i+1].temp)
+        for (i = 0; i < u; i++)
         {
-            t = temps[i].temp;
-            temps[i].temp = temps[i+1].temp;
-            temps[i+1].temp = t;
+            if (temps[i].temp < temps[i + 1].temp)
+            {
+                t = temps[i].temp;
+                temps[i].temp = temps[i + 1].temp;
+                temps[i + 1].temp = t;
+            }
         }
     }
-   }
 }
