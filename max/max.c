@@ -27,11 +27,11 @@ int main(void)
 // TODO: return the max value
 int max(int array[], int n)
 {
-    int i;
+    int k = array[0];
     int j = 0;
-    for(i = 0; i <= n; i++)
+    for(int i = 0; i <= n; i++)
     {
-        if(array[i] > array[i+1])
+        if(k >= array[i])
         {
             j = array[i];
         }
