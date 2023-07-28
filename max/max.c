@@ -33,7 +33,6 @@ int max(int array[], int n)
         if(array[i] < array[i+1])
         {
             j = array[i];
-            return 1;
         }
     }
     return j;
