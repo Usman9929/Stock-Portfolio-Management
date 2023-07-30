@@ -59,14 +59,12 @@ int main(void)
     while (true)
     {
         string item = get_string("Enter a food item: ");
-        if(isupper(item) || islower(item))
-        {
         if (strlen(item) == 0)
         {
             printf("\n");
             break;
         }
-        }
+
         total += get_cost(item);
     }
 
