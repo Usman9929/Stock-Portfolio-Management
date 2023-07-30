@@ -109,7 +109,6 @@ void add_items(void)
 float get_cost(string item)
 {
     //menu_item menu1;
-    float k = 0.0;
     for(int i = 0; i < NUM_ITEMS; i++)
     {
     if(strcmp(menu[i].item,item)==0)
