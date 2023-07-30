@@ -75,7 +75,7 @@ int main(void)
 void add_items(void)
 {
     menu[0].item = "Burger";
-    menu[0].price = 97;
+    menu[0].price = 9.50;
 
     menu[1].item = "Vegan Burger";
     menu[1].price = 11.00;
