@@ -113,7 +113,7 @@ float get_cost(string item)
     {
     if(strcmp(menu[i].item,item)==0)
     {
-
+        
     }
     }
     return ;
