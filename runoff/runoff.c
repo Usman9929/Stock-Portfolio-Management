@@ -179,7 +179,7 @@ int find_min(void)
     int manimum = INT_MAX;
     for(int i = 0; i < candidate_count; i++)
     {
-        if(!candidates[i].eliminated && candidates[i].votes < maximum)
+        if(!candidates[i].eliminated && candidates[i].votes < manimum)
         {
             manimum = candidates[i].votes;
         }
@@ -193,7 +193,7 @@ bool is_tie(int min)
     // Remaining Candidates.
     int candidates1 = 0;
     int min_votes = 0; // Candidates with manimum Votes.
-    for(int i = 0; i < candidates_count; i++)
+    for(int i = 0; i < candidate_count; i++)
     {
         if(!candidates[i].eliminated)
         {
@@ -214,12 +214,11 @@ bool is_tie(int min)
 // Eliminate the candidate (or candidates) in last place
 void eliminate(int min)
 {
-    for(int i = 0; i < candidates_count; i++)
+    for(int i = 0; i < candidate_count; i++)
     {
         if(!candidates[i].eliminated && candidates[i].votes == min)
         {
             return true;
         }
     }
-    return;
 }
