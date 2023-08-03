@@ -67,9 +67,9 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
-    candidate[0].name = "Alice";
-    candidate[1].name = "Bob";
-    candidate[2].name = "Charlie";
+    candidates[0].name = "Alice";
+    candidates[1].name = "Bob";
+    candidates[2].name = "Charlie";
     for(int i = 0; i < 3; i++)
     {
         if(strcmp(candidates[i].name,name) == 0)
