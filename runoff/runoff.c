@@ -158,7 +158,7 @@ void tabulate(void)
     return;
 }
 
-// Print the winner of the election, if there is one
+// Print the winner of the election, if ther e is one
 bool print_winner(void)
 {
     int maximum = (voter_count / 2) + 1;
