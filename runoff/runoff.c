@@ -204,6 +204,10 @@ bool is_tie(int min)
             }
         }
     }
+    if(candidates1 == min_votes)
+    {
+        return true;
+    }
     return false;
 }
 
