@@ -133,7 +133,7 @@ bool vote(int voter, int rank, string name)
     {
         if(strcmp(candidates[i].name,name)==0)
         {
-            preferences[vote][rank] = i;
+            preferences[voter][rank] = i;
             return true;
         }
     }
@@ -146,9 +146,9 @@ void tabulate(void)
     // TODO
     for(int i = 0; i < voter_count; i++)
     {
-        for(int j = 0; j < candidates_count; j++)
+        for(int j = 0; j < candidate_count; j++)
         {
-            if(!candidates[prefrerences[i][j]].eliminated)
+            if(!candidates[preferences[i][j]].eliminated)
             {
                 candidates[preferences[i][j]].votes += 1;
                 break;
@@ -162,7 +162,7 @@ void tabulate(void)
 bool print_winner(void)
 {
     int maximum = (voter_count / 2) + 1;
-    for(int i = 0; i < candidates_count; i++)
+    for(int i = 0; i < candidate_count; i++)
     {
         if(candidates[i].votes >= maximum)
         {
