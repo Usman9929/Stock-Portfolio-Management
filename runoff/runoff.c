@@ -190,9 +190,19 @@ int find_min(void)
 // Return true if the election is tied between all candidates, false otherwise
 bool is_tie(int min)
 {
+    // Remaining Candidates.
+    int candidates1 = 0;
+    int min_votes = 0; // Candidates with manimum Votes.
     for(int i = 0; i < candidates_count; i++)
     {
-        if()
+        if(!candidates[i].eliminated)
+        {
+            candidates1 += 1;
+            if(candidates[i].votes == min)
+            {
+                min_votes += 1;
+            }
+        }
     }
     return false;
 }
