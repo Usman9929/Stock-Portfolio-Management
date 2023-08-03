@@ -69,7 +69,10 @@ bool vote(string name)
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(candidates[i].name, name) == 0)
+        {
+            candidates[i].votes++;
             return true;
+        }
     }
     return false;
 }
@@ -78,6 +81,5 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
-    if
         return;
 }
