@@ -10,8 +10,7 @@ typedef struct
 {
     string name;
     int votes;
-}
-candidate;
+} candidate;
 
 // Array of candidates
 candidate candidates[MAX];
@@ -70,10 +69,10 @@ bool vote(string name)
     candidates[0].name = "Alice";
     candidates[1].name = "Bob";
     candidates[2].name = "Charlie";
-    for(int i = 0; i < 3; i++)
+    for (int i = 0; i < 3; i++)
     {
-        if(strcmp(candidates[i].name,name) == 0)
-        return true;
+        if (strcmp(candidates[i].name, name) == 0)
+            return true;
     }
 
     return false;
@@ -83,5 +82,6 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
+    
     return;
 }
