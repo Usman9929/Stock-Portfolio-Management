@@ -74,11 +74,6 @@ bool vote(string name)
         if (strcmp(candidates[i].name, name) == 0)
             return true;
     }
-    else if(strcmp(candidates[i]).name < candidates[i+1].name))
-    {
-        candidates_count++;
-    }
-
     return false;
 }
 
@@ -87,5 +82,5 @@ void print_winner(void)
 {
     // TODO
     if
-    return;
+        return;
 }
