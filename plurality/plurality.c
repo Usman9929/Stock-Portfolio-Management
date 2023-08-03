@@ -71,7 +71,7 @@ bool vote(string name)
     candidates1[0].name = "Alice";
     candidates1[1].name = "Bob";
     candidates1[2].name = "Charlie";
-    for(int i = 0; i < MAX; i++)
+    for(int i = 0; i < 3; i++)
     {
         if(strcmp(candidates[i].name,name) == 0)
         return true;
