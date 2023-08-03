@@ -167,10 +167,10 @@ bool print_winner(void)
         if(candidates[i].votes >= maximum)
         {
             printf("%s\n", candidates[i].name);
-            return false;
+            return true;
         }
     }
-    return true;
+    return false;
 }
 
 // Return the minimum number of votes any remaining candidate has
