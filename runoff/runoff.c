@@ -133,7 +133,7 @@ bool vote(int voter, int rank, string name)
     {
         if(strcmp(candidates[i].name,name)==0)
         {
-            candidates[i].votes++;
+            preferences[vote][rank] = i;
             return true;
         }
     }
@@ -144,13 +144,24 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
+    for(int i = 0; i < voter_count; i++)
+    {
+        for(int j = 0; j < candidates_count; j++)
+        {
+            if(!candidates[prefrerences[i][j]].eliminated)
+            {
+                candidates[preferences[i][j]].votes += 1;
+                break;
+            }
+        }
+    }
     return;
 }
 
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    // TODO
+    
     return false;
 }
 
