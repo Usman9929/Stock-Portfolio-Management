@@ -154,7 +154,8 @@ void sort_pairs(void)
         {
             if(pair_weight(j) < ming_weight)
             {
-                min_weight = 
+                min_weight = pair_weight(j);
+                min_idx = j;
             }
         }
         i--;
