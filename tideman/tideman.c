@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max number of candidates
 #define MAX 9
@@ -202,7 +203,16 @@ void print_winner(void)
 {
     for(int r = 0; i < candidate_count; r++)
     {
-        for(int c = 0; )
+        for(int c = 0; c < candidate_count; c++)
+        {
+            if(locked[i][c] == true)
+            {
+                break;
+            }
+            else if(c == cadidate - 1)
+            {
+                printf("%s", candidate[r]);
+            }
+        }
     }
-    return;
 }
