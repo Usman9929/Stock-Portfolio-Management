@@ -159,6 +159,9 @@ void sort_pairs(void)
             }
         }
         i--;
+        pair temp = pairs[min_idx];
+        pair[min_idx] = pairs[i];
+        pairs[i] = temp
     }
     return;
 }
@@ -166,7 +169,11 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // TODO
+    for(int i = 0; i < pair_count; i++)
+    {
+        int winner = pairs[i].winner;
+        int loser = pairs[i].loser;
+    }
     return;
 }
 
