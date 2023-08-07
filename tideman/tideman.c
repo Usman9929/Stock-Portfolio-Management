@@ -169,7 +169,18 @@ void sort_pairs(void)
 
 bool cycle(int winner,int loser)
 {
-    
+    if(locked[winner][loser] == true)
+    {
+        return true;
+    }
+    for(int i = 0; i < candidate_count; i++)
+    {
+        if(locked[loser][i] == true && cycle(winner,i))
+        {
+            return true;
+        }
+    }
+    return false;
 }
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
@@ -189,6 +200,9 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
+    for(int r = 0; i < candidate_count; r++)
+    {
+        for(int c = 0; )
+    }
     return;
 }
