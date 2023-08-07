@@ -32,6 +32,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+bool cycle(int winner,int loser);
 
 int main(int argc, string argv[])
 {
@@ -166,6 +167,10 @@ void sort_pairs(void)
     return;
 }
 
+bool cycle(int winner,int loser)
+{
+    
+}
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
@@ -173,6 +178,10 @@ void lock_pairs(void)
     {
         int winner = pairs[i].winner;
         int loser = pairs[i].loser;
+        if(!cycle(winner,loser))
+        {
+            locked[winner][loser] = true;
+        }
     }
     return;
 }
