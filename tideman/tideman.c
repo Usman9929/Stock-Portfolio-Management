@@ -133,7 +133,7 @@ void add_pairs(void)
         {
             if(preferences[i][j] > preferences[j][i])
             {
-                pair new_pair = {i, j};
+                pair new_pair = {i, j}
                 pairs[pair_count] = new_pair;
                 pair_count += 1;
             }
@@ -145,11 +145,25 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-   int height;
-   for(int i = 0; i < pair_count; i++)
-   {
-    strenght
-   }
+    int i = pair_count - 1;
+    while( i >= 0)
+    {
+        int min_weight = pair_weight(1);
+        int min_idx  = i;
+        for(int j = i - 1; j >= 0; j--)
+        {
+            if(pair_weight(j) < ming_weight)
+            {
+                min_weight = pair_weight(j);
+                min_idx = j;
+            }
+        }
+        i--;
+        pair temp = pairs[min_idx];
+        pair[min_idx] = pairs[i];
+        pairs[i] = temp
+    }
+    return;
 }
 
 bool cycle(int winner,int loser)
