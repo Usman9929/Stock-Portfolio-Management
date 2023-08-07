@@ -146,7 +146,10 @@ void add_pairs(void)
 void sort_pairs(void)
 {
    int height;
-   for(int i = 0;)
+   for(int i = 0; i < pair_count; i++)
+   {
+    strenght
+   }
 }
 
 bool cycle(int winner,int loser)
