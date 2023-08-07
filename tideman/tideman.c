@@ -120,8 +120,8 @@ void record_preferences(int ranks[])
         {
             preferences[ranks[i]][i[j]] += 1;
         }
+        i++;
     }
-    return;
 }
 
 // Record pairs of candidates where one is preferred over the other
