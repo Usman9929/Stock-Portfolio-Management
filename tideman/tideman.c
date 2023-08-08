@@ -16,8 +16,7 @@ typedef struct
 {
     int winner;
     int loser;
-}
-pair;
+} pair;
 
 // Array of candidates
 string candidates[MAX];
@@ -33,7 +32,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
-bool cycle(int winner,int loser);
+bool cycle(int winner, int loser);
 
 int main(int argc, string argv[])
 {
@@ -101,9 +100,9 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(strcmp(name,candidates[i])== 0)
+        if (strcmp(name, candidates[i]) == 0)
         {
             ranks[rank] = i;
             return true;
@@ -115,9 +114,9 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    for(int rank = 0; rank < candidate_count; rank++)
+    for (int rank = 0; rank < candidate_count; rank++)
     {
-        for(int j = rank+1; j < candidate_count; j++)
+        for (int j = rank + 1; j < candidate_count; j++)
         {
             preferences[ranks[rank]][ranks[j]] += 1;
         }
@@ -127,11 +126,11 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        for(int j = 0; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count; j++)
         {
-            if(preferences[i][j] > preferences[j][i])
+            if (preferences[i][j] > preferences[j][i])
             {
                 pair new_pair = {i, j};
                 pairs[pair_count] = new_pair;
@@ -145,33 +144,33 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int pair_temp = 0;
-    for(int i = 0; i < pair_count; i++)
+    int pair_temp;
+    for (int i = 0; i < pair_count; i++)
     {
         int max_index = i;
         int current_strength = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
-        for(int j = i + 1; j < pair_count; j++)
+        for (int j = i + 1; j < pair_count; j++)
         {
             int temp_strength = preferences[pairs[j].winner][pairs[j].loser] - preferences[pairs[j].loser][pairs[j].winner];
-            if(temp_strength > current_strength)
-            max_index = j;
+            if (temp_strength > current_strength)
+                max_index = j;
             current_strength = preferences[pairs[j].winner][pairs[j].loser] - preferences[pairs[j].loser][pairs[j].winner];
         }
+        pair_temp = pairs[max_index];
+        pairs[max_index] = pairs[j];
+        pair[i] = temp;
     }
-    pair_temp = pairs[max_index];
-    pairs[max_index] = pairs[j];
-    pair[i] = temp;
 }
 
-bool cycle(int winner,int loser)
+bool cycle(int winner, int loser)
 {
-    if(locked[winner][loser] == true)
+    if (locked[winner][loser] == true)
     {
         return true;
     }
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(locked[loser][i] == true && cycle(winner,i))
+        if (locked[loser][i] == true && cycle(winner, i))
         {
             return true;
         }
@@ -181,11 +180,11 @@ bool cycle(int winner,int loser)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    for(int i = 0; i < pair_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
         int winner = pairs[i].winner;
         int loser = pairs[i].loser;
-        if(!cycle(winner,loser))
+        if (!cycle(winner, loser))
         {
             locked[winner][loser] = true;
         }
@@ -196,15 +195,15 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    for(int r = 0; i < candidate_count; r++)
+    for (int r = 0; i < candidate_count; r++)
     {
-        for(int c = 0; c < candidate_count; c++)
+        for (int c = 0; c < candidate_count; c++)
         {
-            if(locked[i][c] == true)
+            if (locked[i][c] == true)
             {
                 break;
             }
-            else if(c == cadidate - 1)
+            else if (c == cadidate - 1)
             {
                 printf("%s", candidate[r]);
             }
