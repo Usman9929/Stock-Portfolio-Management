@@ -11,6 +11,5 @@ int main()
     x[0] = 72;
     x[1] = 73;
     x[2] = 74;
-    free(x);
     return 0;
 }
