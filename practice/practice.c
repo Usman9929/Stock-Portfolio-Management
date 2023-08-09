@@ -1,24 +1,16 @@
 #include <stdio.h>
-#include <cs50.h>
-#include <ctype.h>
 #include <stdlib.h>
-#include <string.h>
 
 int main()
 {
-    char *s = get_string("s: ");
-
-    char *t = malloc(strlen(s) + 1);
-
-    for(int i = 0; i < strlen(s) +1; i++)
+    int *x  = malloc(3 *sizeof(int));
+    if(x == NULL)
     {
-        t[i] = s[i];
+        return 1;
     }
-    if(strlen(t) > 0)
-    {
-        t[0] = toupper(t[0]);
-    }
-
-    printf("s: %s\n", s);
-    printf("t: %s\n", t);
+    x[0] = 72;
+    x[1] = 73;
+    x[2] = 74;
+    free(x);
+    return 0;
 }
