@@ -1,9 +1,13 @@
 #include <stdio.h>
+#include <cs50.>
+#include <string.h>
 
 int main()
 {
-    int x;
-    printf("x:");
-    scanf("%i", &x);
-    printf("x %i\n", x);
+    FILE *file = fopen("phonebook.csv", "a");
+    string name = get_string("Name:");
+    string number = get_sting("Number:");
+    fprintf(file, "%s, %s\n", name, number);
+
+    fclose(file);
 }
