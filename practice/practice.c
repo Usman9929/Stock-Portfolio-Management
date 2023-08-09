@@ -2,6 +2,8 @@
 
 int main()
 {
-    int n = 5;
-    printf("%p\n",&n);
+    char *s = "HI!";
+    printf("%c\n",*s);
+    printf("%c\n",*(s+1));
+    printf("%c\n",*(s+2));
 }
