@@ -1,17 +1,24 @@
 #include <stdio.h>
 #include <cs50.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 
-int factorial(int n);
 int main()
 {
-    int fact = get_int("Enter factorial of a number:");
-    printf("%i\n",factorial(fact));
-}
-int factorial(int n)
-{
-    if(n == 1)
+    char *s = get_string("s: ");
+
+    char *t = malloc(strlen(s) + 1);
+
+    for(int i = 0; i < strlen(s) +1; i++)
     {
-        return 1;
+        t[i] = s[i];
     }
-    return n * factorial(n-1);
+    if(strlen(t) > 0)
+    {
+        t[0] = toupper(t[0]);
+    }
+
+    printf("%s\n", s);
+    printf("%s\n", t);
 }
