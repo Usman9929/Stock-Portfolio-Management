@@ -116,10 +116,12 @@ void record_preferences(int ranks[])
 {
     for (int rank = 0; rank < candidate_count; rank++)
     {
-        for (int j = rank + 1; j < candidate_count; j++)
+        int j = rank + 1;
+        while(j < candidate_count)
         {
             preferences[ranks[rank]][ranks[j]] += 1;
         }
+        j++;
     }
 }
 
@@ -128,7 +130,8 @@ void add_pairs(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j < candidate_count; j++)
+        int j = 0;
+        while (j < candidate_count)
         {
             if (preferences[i][j] > preferences[j][i])
             {
@@ -136,6 +139,7 @@ void add_pairs(void)
                 pairs[pair_count] = new_pair;
                 pair_count += 1;
             }
+            j++;
         }
     }
     return;
@@ -146,7 +150,8 @@ void sort_pairs(void)
 {
     for (int i = pair_count - 1; i >= 0; i--)
     {
-        for (int j = 0; j <= i - 1; j++)
+        int j = 0;
+        while (j <= i - 1)
         {
             if ((preferences[pairs[j].winner][pairs[j].loser]) < (preferences[pairs[j + 1].winner][pairs[j + 1].loser]))
             {
@@ -154,24 +159,25 @@ void sort_pairs(void)
                 pairs[j] = pairs[j + 1];
                 pairs[j + 1] = temp;
             }
+            j++;
         }
     }
     return;
 }
 
-bool cycle(int end, int cycle_start)
+bool cycle(int last_end, int start_cycle)
 {
     // Return true if there is a cycle created (Recursion base case)
-    if (end == cycle_start)
+    if (last_end == start_cycle)
     {
         return true;
     }
     // Loop through candidates (Recursive case)
     for (int i = 0; i < candidate_count; i++)
     {
-        if (locked[end][i])
+        if (locked[last_end][i])
         {
-            if (cycle(i, cycle_start))
+            if (cycle(i, start_cycle))
             {
                 return true;
             }
@@ -182,14 +188,16 @@ bool cycle(int end, int cycle_start)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-     // Loop through pairs
-    for (int i = 0; i < pair_count; i++)
+    // Loop through pairs
+    int i = 0;
+    while (i < pair_count)
     {
         // If cycle function returns false, lock the pair
         if (!cycle(pairs[i].loser, pairs[i].winner))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
+        i++;
     }
     return;
 }
@@ -197,21 +205,23 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-   // Winner is the candidate with no arrows pointing to them
-    for (int i = 0; i < candidate_count; i++)
+    // Winner is the candidate with no arrows pointing to them
+    int i = 0;
+    while (i < candidate_count)
     {
-        int false_count = 0;
+        int count_false = 0;
         for (int j = 0; j < candidate_count; j++)
         {
             if (locked[j][i] == false)
             {
-                false_count++;
-                if (false_count == candidate_count)
+                count_false++;
+                if (count_false == candidate_count)
                 {
                     printf("%s\n", candidates[i]);
                 }
             }
         }
+        i++;
     }
     return;
 }
