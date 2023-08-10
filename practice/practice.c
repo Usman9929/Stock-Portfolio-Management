@@ -9,6 +9,9 @@ int main()
 
     *c = 14;
     c = &b;
-    
+    *c = 25;
 
+    printf("a has the value of %i", "loacted at %p", &a);
+    printf("b has the value of %i", "located at %p", &b);
+    printf("c has the value of %i", "located at %p", &c);
 }
