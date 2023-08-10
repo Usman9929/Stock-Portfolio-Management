@@ -13,5 +13,5 @@ int main()
 
     printf("a has the value of %i, loacted at %p\n", a, &a);
     printf("b has the value of %i, located at %p\n", b,  &b);
-    printf("c has the value of %p, located at %p\n", &c, &c);
+    printf("c has the value of %p, located at %p\n", c, &c);
 }
