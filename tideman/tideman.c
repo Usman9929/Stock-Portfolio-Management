@@ -177,23 +177,16 @@ bool cycle(int winner, int loser)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // Return true if there is a cycle created (Recursion base case)
-    if (end == cycle_start)
+     // Loop through pairs
+    for (int i = 0; i < pair_count; i++)
     {
-        return true;
-    }
-    // Loop through candidates (Recursive case)
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (locked[end][i])
+        // If cycle function returns false, lock the pair
+        if (!cycle(pairs[i].loser, pairs[i].winner))
         {
-            if (cycle(i, cycle_start))
-            {
-                return true;
-            }
+            locked[pairs[i].winner][pairs[i].loser] = true;
         }
     }
-    return false;
+    return;
 }
 
 // Print the winner of the election
