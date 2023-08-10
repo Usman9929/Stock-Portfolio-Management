@@ -197,17 +197,21 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    for (int r = 0; r < candidate_count; r++)
+   // Winner is the candidate with no arrows pointing to them
+    for (int i = 0; i < candidate_count; i++)
     {
         int false_count = 0;
-        for (int c = 0; c < candidate_count; c++)
+        for (int j = 0; j < candidate_count; j++)
         {
-            if (locked[r][c] == false)
-            false_count++;
+            if (locked[j][i] == false)
+            {
+                false_count++;
                 if (false_count == candidate_count)
                 {
-                    printf("%s\n", candidates[r]);
+                    printf("%s\n", candidates[i]);
                 }
+            }
         }
     }
+    return;
 }
