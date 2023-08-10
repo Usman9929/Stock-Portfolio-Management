@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <cs50.h>
-#include <string.h>
 
 int main()
 {
-    FILE *file = fopen("phonebook.csv", "a");
-    string name = get_string("Name:");
-    string number = get_string("Number:");
-    fprintf(file, "%s, %s\n", name, number);
+    int a = 28;
+    int b = 50;
+    int *c = &a;
 
-    fclose(file);
+    *c = 14;
+    c = &b;
+    
+
 }
