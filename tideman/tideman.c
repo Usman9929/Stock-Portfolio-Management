@@ -199,16 +199,15 @@ void print_winner(void)
 {
     for (int r = 0; r < candidate_count; r++)
     {
+        int false_count = 0;
         for (int c = 0; c < candidate_count; c++)
         {
-            if (locked[r][c] == true)
-            {
-                break;
-            }
-            else if (c == candidate_count - 1)
-            {
-                printf("%s", candidates[r]);
-            }
+            if (locked[r][c] == false)
+            false_count++;
+                if (false_count == candidate_count)
+                {
+                    printf("%s\n", candidates[r]);
+                }
         }
     }
 }
