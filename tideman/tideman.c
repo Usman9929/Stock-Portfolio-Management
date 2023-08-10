@@ -161,15 +161,20 @@ void sort_pairs(void)
 
 bool cycle(int winner, int loser)
 {
-    if (locked[winner][loser] == true)
+    // Return true if there is a cycle created (Recursion base case)
+    if (end == cycle_start)
     {
         return true;
     }
+    // Loop through candidates (Recursive case)
     for (int i = 0; i < candidate_count; i++)
     {
-        if (locked[loser][i] == true && cycle(winner, i))
+        if (locked[end][i])
         {
-            return true;
+            if (cycle(i, cycle_start))
+            {
+                return true;
+            }
         }
     }
     return false;
