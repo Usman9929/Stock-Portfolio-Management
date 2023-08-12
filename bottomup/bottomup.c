@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
             // Temporary storage
             RGBTRIPLE triple;
 
-            // Read RGB triple from infile
+            // Read RGB triple from infilede
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
 
             // Write RGB triple to outfile
