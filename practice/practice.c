@@ -1,25 +1,23 @@
-#include <cs50.h>
 #include <stdio.h>
 
-int collatz(int n);
-int main()
-{
-    int a = get_int("Enter any number: ");
-    printf("The reults is %i\n", collatz(a));
-}
+int main() {
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-int collatz(int n)
-{
-    if (n == 1)
-    {
-        return 0;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
     }
-    else if ((n % 2) == 0)
-    {
-        return 1 + collatz(n / 2);
+
+    printf("Sorted array in descending order: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
     }
-    else
-    {
-        return 1 + collatz(3 * n + 1);
-    }
+
+    return 0;
 }
