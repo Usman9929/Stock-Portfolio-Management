@@ -46,7 +46,13 @@ int main(int argc, char *argv[])
     // TODO: Read samples from input file and write updated data to output file
     int16_t sample;
 
+    // Read data (audio & scaling ) from file.
+    // write data (updated audio ) to file.
     while(fread(&smaple, sizeof(int16_t), 1, input) == 1)
+    {
+        sample *- factor;
+        fwrite(&smaple, sizeof(int16_t), 1, output);
+    }
 
     // Close files
     fclose(input);
