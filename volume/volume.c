@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 
     // Read data (audio & scaling ) from file.
     // write data (updated audio ) to file.
-    while(fread(&sample, sizeof(int16_t), 1, input) == 1)
+    while (fread(&sample, sizeof(int16_t), 1, input) == 1)
     {
         sample *= factor;
         fwrite(&sample, sizeof(int16_t), 1, output);
