@@ -46,6 +46,8 @@ int main(int argc, char *argv[])
     // TODO: Read samples from input file and write updated data to output file
     int16_t sample;
 
+    while(fread(&smaple, sizeof(int16_t), 1, input) == 1)
+
     // Close files
     fclose(input);
     fclose(output);
