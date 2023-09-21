@@ -68,16 +68,16 @@ bool load(const char *dictionary)
         return false;
     }
     char word[LENGTH + 1];
-    while(fscan(file, %s, word) != EOP)
+    while(fscanf(file, "%s", word) != EOF)
     {
-        node *n - malloc(sizeof(node));
+        node *n = malloc(sizeof(node));
 
     if (n == NULL)
     {
         return false;
     }
     strcpy(n->word, word);
-    hash_hash = hash(word);
+    hash_value = hash(word);
     n->next = table[hash_value];
     table[hash_value] = n;
     word_count++;
