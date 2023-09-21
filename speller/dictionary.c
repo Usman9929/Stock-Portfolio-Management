@@ -35,7 +35,7 @@ bool check(const char *word)
 
     while (cursor != 0)
     {
-        if (strcmp(word, cursor->word) == 0)
+        if (strcasecmp(word, cursor->word) == 0)
         {
             return true;
         }
