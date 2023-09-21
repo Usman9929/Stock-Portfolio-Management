@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <strings.h>
 #include <string.h>
-#include <studio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -61,14 +61,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO
-    return false;
-}
-
-// Returns number of words in dictionary if loaded, else 0 if not yet loaded
-unsigned int size(void)
-{
-    FILE *file = fopen(dictionary, "r");
+   FILE *file = fopen(dictionary, "r");
     if (file == NILL)
     {
         printf("Unable to open %s\n", dictionary);
@@ -93,9 +86,28 @@ unsigned int size(void)
     return true;
 }
 
+// Returns number of words in dictionary if loaded, else 0 if not yet loaded
+unsigned int size(void)
+{
+    if (word_count > 0)
+    {
+        return word_count;
+    }
+    return 0;
+}
+
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
-    return false;
+    for(int i = 0; i < N; i++)
+    {
+        node *cursor = table[i];
+        while(cursor)
+        {
+            node *temp = cursor;
+            cursor = cursor->next;
+            free(temp);
+        }
+    }
+    return true;
 }
