@@ -65,6 +65,12 @@ int main(int argc, char *argv[])
 
     // Write reversed audio to file
     // TODO #8
+    BYTE buffer[size];
+    while(ftell(intptr) - size > sizeof(header))
+    {
+        fread(buffer, size, 1, intptr);
+        fwrite(buffer, size,  1, outptr);
+    }
 
     fclose(outptr);
     fclose(intptr);
