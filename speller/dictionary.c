@@ -78,7 +78,7 @@ unsigned int size(void)
     while(fscan(file, %s, word) != EOP)
     {
         node *n - malloc(sizeof(node));
-    }
+
     if (n == NULL)
     {
         return false;
@@ -88,6 +88,9 @@ unsigned int size(void)
     n->next = table[hash_value];
     table[hash_value] = n;
     word_count++;
+    }
+    fclose(file);
+    return true;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
