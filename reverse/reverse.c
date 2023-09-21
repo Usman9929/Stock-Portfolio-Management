@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
     // Ensure proper usage
     // TODO #1
-    if(argc != 3)
+    if (argc != 3)
     {
         printf("Usage: /reverse input.wave output.wav");
         return 1;
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     // TODO #2
     char *infile = argv[1];
     FILE *intptr = fopen(infile, "rb");
-    if(intptr == NULL)
+    if (intptr == NULL)
     {
         printf("Could not open %s.\n", infile);
         return 1;
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     // TODO #5
     char *output = argv[2];
     FILE *outptr = fopen(output, "wb");
-    if(outptr == NULL)
+    if (outptr == NULL)
     {
         printf("Could not open %s.\n", output);
         return 1;
