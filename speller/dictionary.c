@@ -33,7 +33,7 @@ bool check(const char *word)
 {
     // TODO
     hash_value = hash(word);
-    node *cursor - table[hash_value];
+    node *cursor = table[hash_value];
 
     while(cursor != 0)
     {
@@ -62,7 +62,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
    FILE *file = fopen(dictionary, "r");
-    if (file == NILL)
+    if (file == NULL)
     {
         printf("Unable to open %s\n", dictionary);
         return false;
