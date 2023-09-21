@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     // Open the ferosonic image file specified in the command line arguments (NOTES).
     char *file = argv[1];
     FILE *raw_file = fopen(file, "r");
-    if (new_file == NULL)
+    if (raw_file == NULL)
     {
         // Print an error messege to standard error if the forensic image file cannot be opened (NOTES)
         printf("Could not open %s.\n", file);
@@ -28,12 +28,12 @@ int main(int argc, char *argv[])
     // Initilize variable.
     bool found_jpg = false;    // Flag to keep track of weather a JPEG has been found.
     int jpg_count = 0;         // Counter of the number of JPEGs found.
-    unit8_t buffer[BLOC_SIZE]; // Buffer to store a block of data from the forensic image(Notes)
+    uint8_t buffer[BLOCK_SIZE]; // Buffer to store a block of data from the forensic image(Notes)
     char jpg_name[8];          // Array to store the file name of the current JPEG
-    File *outptr = NULL;       // Pointer to the current JPEG File.
+    FILE *outptr = NULL;       // Pointer to the current JPEG File.
 
     // Read the forensic image file block by block (NOTES)
-    while (fread(buffer, BLOCK_SIZEN, 1, raw_file))
+    while (fread(buffer, BLOCK_SIZE, 1, raw_file))
     {
         // Check if this block marks the start of a new JPEG (NOTES).
         if (buffer[0] == oxff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
