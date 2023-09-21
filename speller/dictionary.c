@@ -2,6 +2,9 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <strings.h>
+#include <string.h>
+#include <studio.h>
 
 #include "dictionary.h"
 
@@ -25,6 +28,17 @@ unsigned int hash_value;
 bool check(const char *word)
 {
     // TODO
+    hash_value = hash(word);
+    node *cursor - table[hash_value];
+
+    while(cursor != 0)
+    {
+        if (strcmp(word, cursor->word)== 0)
+        {
+            return true;
+        }
+        cursor = cursor->next;
+    }
     return false;
 }
 
@@ -32,7 +46,12 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    unsigned long total = 0;
+    for(int i = 0; i < strlen(word); i++)
+    {
+        total += tolower(word[i]);
+    }
+    return total % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -45,7 +64,17 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
+    FILE *file = fopen(dictionary, "r");
+    if (file == NILL)
+    {
+        printf("Unable to open %s\n", dictionary);
+        return false;
+    }
+    char word[LENGTH + 1];
+    while(fscan(file, %s, word) != EOP)
+    {
+        node *
+    }
     return 0;
 }
 
