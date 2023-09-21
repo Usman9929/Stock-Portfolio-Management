@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
         printf("Usage: /recover IMAGE\n");
         return 1;
     }
+    
     // Open the ferosonic image file specified in the command line arguments (NOTES).
     char *file argv[1];
     File *raw_file = fopen(file, "r");
@@ -23,7 +24,7 @@ int main(int argc, char *argv[])
         printf("Could not open %s.\n", file);
         return 1;
     }
-    
+
     // Initilize variable.
     bool found_jpg = false;    // Flag to keep track of weather a JPEG has been found.
     int jpg_count = 0;         // Counter of the number of JPEGs found.
