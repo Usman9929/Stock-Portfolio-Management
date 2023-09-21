@@ -14,9 +14,9 @@ int main(int argc, char *argv[])
         printf("Usage: /recover IMAGE\n");
         return 1;
     }
-    
+
     // Open the ferosonic image file specified in the command line arguments (NOTES).
-    char *file argv[1];
+    char *file = argv[1];
     File *raw_file = fopen(file, "r");
     if (new_file == NULL)
     {
