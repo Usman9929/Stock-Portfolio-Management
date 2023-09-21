@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
     // Open the ferosonic image file specified in the command line arguments (NOTES).
     char *file = argv[1];
-    File *raw_file = fopen(file, "r");
+    FILE *raw_file = fopen(file, "r");
     if (new_file == NULL)
     {
         // Print an error messege to standard error if the forensic image file cannot be opened (NOTES)
