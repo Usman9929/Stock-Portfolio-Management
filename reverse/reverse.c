@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     FILE *intptr = fopen(infile, "rb");
     if(intptr == NULL)
     {
-        pritf("Could not open %s.\n" infile);
+        printf("Could not open %s.\n", infile);
         return 1;
     }
 
@@ -34,18 +34,39 @@ int main(int argc, char *argv[])
 
     // Use check_format to ensure WAV format
     // TODO #4
+    if (check_format(header) == 0)
+    {
+        printf("Not a wav File\n");
+        return 1;
+    }
+    if (header.audioFormat != 1)
+    {
+        printf("Not a wav File\n");
+        return 1;
+    }
 
     // Open output file for writing
     // TODO #5
+    char *output = argv[2];
+    FILE *outptr = fopen(output, "wb");
+    if(outptr == NULL)
+    {
+        pritf("Could not open %s.\n" output);
+        return 1;
+    }
 
     // Write header to file
     // TODO #6
+    fwrite(&header, sizeof(WAVHEADER), 1, outptr);
 
     // Use get_block_size to calculate size of block
     // TODO #7
+    int size = get_block_size(header);
 
     // Write reversed audio to file
     // TODO #8
+
+    fclose(outptr);
     fclose(intptr);
 }
 
@@ -62,5 +83,6 @@ int check_format(WAVHEADER header)
 int get_block_size(WAVHEADER header)
 {
     // TODO #7
-    return 0;
+    int size = header.numChannels * bitsPerSample / 8;
+    return size;
 }
