@@ -5,6 +5,8 @@
 #include <strings.h>
 #include <string.h>
 #include <studio.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 #include "dictionary.h"
 
@@ -22,7 +24,9 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 
+// function for use.
 unsigned int hash_value;
+unsigned int word_count;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -73,9 +77,17 @@ unsigned int size(void)
     char word[LENGTH + 1];
     while(fscan(file, %s, word) != EOP)
     {
-        node *
+        node *n - malloc(sizeof(node));
     }
-    return 0;
+    if (n == NULL)
+    {
+        return false;
+    }
+    strcpy(n->word, word);
+    hash_hash = hash(word);
+    n->next = table[hash_value];
+    table[hash_value] = n;
+    word_count++;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
