@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     FILE *outptr = fopen(output, "wb");
     if(outptr == NULL)
     {
-        pritf("Could not open %s.\n" output);
+        printf("Could not open %s.\n", output);
         return 1;
     }
 
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if(header.format[0] == "w" && header.format[1] "A" && header.format[2] == "V" && header.format[3] == "E")
+    if(header.format[0] == 'W' && header.format[1] 'A' && header.format[2] == 'V' && header.format[3] == 'E')
     {
         return 1;
     }
