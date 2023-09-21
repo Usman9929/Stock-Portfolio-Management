@@ -1,4 +1,4 @@
-clear// Simulate genetic inheritance of blood type
+// Simulate genetic inheritance of blood type
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -86,8 +86,11 @@ void free_family(person *p)
     }
 
     // TODO: Free parents recursively
+    free_family(p->parents[0]);
+    free_family(p->parents[1]);
 
     // TODO: Free child
+    free(p);
 
 }
 
