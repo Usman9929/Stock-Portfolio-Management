@@ -10,8 +10,7 @@ def get_height():
         try:
         n = int(input("Height: "))
         if n < 0:
-            break
-        return n
+    return n
 except ValueError:
 
 main()
