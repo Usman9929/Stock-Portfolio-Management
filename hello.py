@@ -12,5 +12,4 @@ def get_height():
         if n > 0:
             break
         return n
-
 main()
