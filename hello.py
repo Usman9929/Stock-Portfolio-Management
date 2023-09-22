@@ -1,7 +1,7 @@
-
-
 x = int (input("x: "))
 y = int (input("y: "))
 
-z = x / y
-print(f"{z:.20}")
+if x < y:
+    print("x is less than y: ")
+else:
+    print("y is less than x: ")
