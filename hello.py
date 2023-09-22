@@ -1,9 +1,6 @@
-x = int (input("x: "))
-y = int (input("y: "))
+s = input("Do you agree?")
 
-if x < y:
-    print("x is less than y: ")
-elif x > y:
-    print("y is less than x: ")
-else:
-    print("x and y is equal:")
+if s == "Y" or s == "y":
+    print("Agreed.")
+elif s == "N" or s == "n":
+    print("not agreed: ")
