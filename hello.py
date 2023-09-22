@@ -7,7 +7,7 @@ def main():
 
 def get_height():
     while True:
-        
+
         n = int(input("Height: "))
         if n > 0:
             break
