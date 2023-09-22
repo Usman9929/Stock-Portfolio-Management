@@ -1,6 +1,13 @@
-s = input("Do you agree?")
+def main():
+    height = get_height()
+    for i in range(height):
+        print("#")
 
-if s.lower() in ["y", "yes"]:
-    print("Agreed.")
-elif s.lower() in ["n", "no"]:
-    print("not agreed: ")
+def get_height():
+    while True:
+        n = int (input("Height: "))
+        if n > 0:
+            break
+        return n
+
+main()
