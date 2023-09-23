@@ -27,3 +27,9 @@ print("Round 4")
 for word in words[2:3]:
     print(word)
 print()
+
+# Round 5
+print("Round 5")
+for word in words():
+    print("Goodnight Moon")
+print()
