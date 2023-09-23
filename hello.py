@@ -24,12 +24,12 @@ print()
 
 # Round 4
 print("Round 4")
-for word in words[2:3]:
+for word in words[2:]:
     print(word)
 print()
 
 # Round 5
 print("Round 5")
-for word in words:
+for _ in words:
     print("Goodnight Moon")
 print()
