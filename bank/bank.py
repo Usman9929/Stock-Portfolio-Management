@@ -1,10 +1,10 @@
-s = intput("Greeting: ")
+text = input("Greeting:")
 
-if s == "Hello":
+if text == "Hello":
     print("$0")
-elif s == "Hello, Newman":
+elif text == "Hello, Newman":
     print("$0")
-elif s == "How you doing?":
+elif text == "How you doing?":
     print("$20")
-elif s == "What's happening?":
+elif text == "What's happening?":
     print("$100")
