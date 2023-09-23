@@ -3,6 +3,7 @@
 import csv
 import sys
 import random
+import time
 
 # Number of simluations to run
 N = 1000000
@@ -38,8 +39,8 @@ def main():
             else:
                 counts[winner] = 1
 
-    #calculate elapased
-    elapased_time = time.time() - start_time
+        #calculate elapased
+        elapased_time = time.time() - start_time
 
         # Print each team's chances of winning, according to simulation
         for team in sorted(counts, key=lambda team: counts[team], reverse=True):
@@ -47,7 +48,7 @@ def main():
 
     #print for time taken
     print(f"Elapased time: {elapased_time: .3f}s")
-    prinf()
+    print()
 
 def simulate_game(team1, team2):
     """Simulate a game. Return True if team1 wins, False otherwise."""
