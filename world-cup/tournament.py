@@ -16,7 +16,7 @@ def main():
     teams = []
     # TODO: Read teams into memory from file
     filename = sys.argv[1]
-    with open(filename, "r") as file:
+    with open("2019.csv") as file:
         reader = csv.DictReader(file)
         for row in reader:
             teams.append({"name": row["team"], "rating": int(row["rating"])})
