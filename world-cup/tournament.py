@@ -47,6 +47,7 @@ def main():
 
     #print for time taken
     print(f"Elapased time: {elapased_time: .3f}s")
+    prinf()
 
 def simulate_game(team1, team2):
     """Simulate a game. Return True if team1 wins, False otherwise."""
