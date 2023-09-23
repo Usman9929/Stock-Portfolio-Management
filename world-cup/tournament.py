@@ -3,7 +3,6 @@
 import csv
 import sys
 import random
-import time
 
 # Number of simluations to run
 N = 1000
@@ -26,10 +25,6 @@ def main():
             team["rating"] = int(team["rating"])
             teams.append(team)
 
-    for n in N:
-        #timer
-        start_time = time.time()
-
         counts = {}
         # TODO: Simulate N tournaments and keep track of win counts
         for i in range(N):
@@ -39,16 +34,11 @@ def main():
             else:
                 counts[winner] = 1
 
-        #calculate elapased
-        elapased_time = time.time() - start_time
 
         # Print each team's chances of winning, according to simulation
         for team in sorted(counts, key=lambda team: counts[team], reverse=True):
             print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
-    #print for time taken
-    print(f"Elapased time: {elapased_time: .3f}s")
-    print()
 
 def simulate_game(team1, team2):
     """Simulate a game. Return True if team1 wins, False otherwise."""
