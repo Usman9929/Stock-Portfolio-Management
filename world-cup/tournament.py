@@ -9,32 +9,20 @@ N = 1000
 
 
 def main():
+
     # Ensure correct usage
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
 
     teams = []
     # TODO: Read teams into memory from file
-    filename = sys.argv[1]
-    with open("2019.csv") as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            teams.append({"name": row["team"], "rating": int(row["rating"])})
 
     counts = {}
-
-    # Simulate N tournaments and keep track of win counts
-    for _ in range(N):
-        winner = simulate_tournament(teams)
-        counts[winner] = counts.get(winner, 0) + 1
+    # TODO: Simulate N tournaments and keep track of win counts
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
         print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
-
-
-if __name__ == "__main__":
-    main()
 
 
 def simulate_game(team1, team2):
@@ -61,9 +49,7 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
-    while len(teams) > 1:
-        teams = simulate_round(teams)
-    return teams[0]["name"]
+    # TODO
 
 
 if __name__ == "__main__":
