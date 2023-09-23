@@ -30,6 +30,6 @@ print()
 
 # Round 5
 print("Round 5")
-for word in words():
+for word in words:
     print("Goodnight Moon")
 print()
