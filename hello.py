@@ -1,10 +1,5 @@
-text = input("Greeting:")
+text = "In the great green boy"
 
-if text == "Hello":
-    print("$0")
-elif text == "Hello, Newman":
-    print("$0")
-elif text == "How you doing?":
-    print("$20")
-elif text == "What's happening?":
-    print("$100")
+for c in text:
+    print(c, end="")
+    print()
