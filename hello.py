@@ -15,4 +15,9 @@ for word in words:
         print(c)
 print()
 
-# Rou
+# Round 3
+print("Round 3")
+for word in words:
+    if "g" in word:
+        print(word)
+print()
