@@ -5,7 +5,7 @@ import sys
 import random
 
 # Number of simluations to run
-N = 1000000
+N = 1000
 
 
 def main():
@@ -14,30 +14,30 @@ def main():
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
 
-    teams = []
-    filename = sys.argv[1]
 
     teams = []
     # TODO: Read teams into memory from file
+    filename = sys.argv[1]
     with open(filename) as file:
         file_reader = csv.DictReader(file)
         for row in file_reader:
-            teams.append({
-                "team": row["team"], "rating": int(row["rating"] )})
+            team = row
+            team["rating"] = int(team["rating"])
+            teams.append(team)
+
+        counts = {}
+        # TODO: Simulate N tournaments and keep track of win counts
+        for i in range(N):
+            winner = simulate_tournament(teams)
+            if winner in counts:
+                counts[winner] += 1
+            else:
+                counts[winner] = 1
 
 
-    counts = {}
-    # TODO: Simulate N tournaments and keep track of win counts
-    for i in range(N):
-        winner = simulate_tournament(teams)
-        if winner in counts:
-            counts[winner] += 1
-        else:
-            counts[winner] = 1
-
-    # Print each team's chances of winning, according to simulation
-    for team in sorted(counts, key=lambda team: counts[team], reverse=True):
-        print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
+        # Print each team's chances of winning, according to simulation
+        for team in sorted(counts, key=lambda team: counts[team], reverse=True):
+            print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
 
 def simulate_game(team1, team2):
@@ -64,9 +64,14 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
-    while len(teams) > 1:
+    # TODO
+    round = len(teams)
+    if round >= 2:
         teams = simulate_round(teams)
-    return teams[0]["team"]
+        return simulate_tournament(teams)
+    else:
+        winner = teams[0]["team"]
+        return winner
 
 
 if __name__ == "__main__":
