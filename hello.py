@@ -21,3 +21,9 @@ for word in words:
     if "g" in word:
         print(word)
 print()
+
+# Round 4
+print("Round 4")
+for word in words[:2]:
+    print(word)
+print()
