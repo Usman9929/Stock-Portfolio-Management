@@ -37,7 +37,7 @@ def main():
                 counts[winner] += 1
             else:
                 counts[winner] = 1
-                
+
     #calculate elapased
     elapased_time = time.time() - start_time
 
@@ -45,6 +45,8 @@ def main():
         for team in sorted(counts, key=lambda team: counts[team], reverse=True):
             print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
+    #print for time taken
+    print(f"Elapased time: {elapased_time: .3f}s")
 
 def simulate_game(team1, team2):
     """Simulate a game. Return True if team1 wins, False otherwise."""
