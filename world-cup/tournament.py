@@ -25,12 +25,10 @@ def main():
             teams.append({
                 "team": row["team"], "rating": int(row["rating"] )})
 
-  for n in N:
-    #timer
-    start_time = timer.time()
-
-
-    counts = {}
+    for n in N:
+        #timer
+        start_time = time.time()
+        counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
     for i in range(N):
         winner = simulate_tournament(teams)
@@ -70,7 +68,7 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     while len(teams) > 1:
         teams = simulate_round(teams)
-    return teams[0]["teams"]
+    return teams[0]["team"]
 
 
 if __name__ == "__main__":
