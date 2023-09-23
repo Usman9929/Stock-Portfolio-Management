@@ -9,7 +9,6 @@ N = 1000
 
 
 def main():
-
     # Ensure correct usage
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
@@ -22,9 +21,7 @@ def main():
     with open(filename) as file:
         file_reader = csv.DictReader(file)
         for row in file_reader:
-            teams.append({
-                "team": row["team"], "rating": int(row["rating"] )})
-
+            teams.append({"team": row["team"], "rating": int(row["rating"])})
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
