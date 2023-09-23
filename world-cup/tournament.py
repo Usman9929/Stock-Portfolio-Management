@@ -14,8 +14,8 @@ def main():
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
 
-        teams = []
-        filename = sys.argv[1]
+    teams = []
+    filename = sys.argv[1]
 
     teams = []
     # TODO: Read teams into memory from file
@@ -66,8 +66,8 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
     while len(team) > 1:
-        teams = simulate_round(teams)
-    return teams[0]["teams"]
+        team = simulate_round(teams)
+    return team[0]["teams"]
 
 
 if __name__ == "__main__":
