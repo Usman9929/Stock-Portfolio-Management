@@ -1,10 +1,8 @@
+import csv
+
 books = []
 
-for i in range(3):
-    book = dict()
-    book["title"] = input("Title:")
-    book["Author"] = input("Author:")
-
-    books.append(book)
-
-print(books)
+with open("2018m.csv") as file:
+    file_reader = csv.DictReader(file)
+    for book in file_reader:
+        print(book)
