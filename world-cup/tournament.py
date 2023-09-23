@@ -26,14 +26,19 @@ def main():
             })
 
     counts = {}
+
     # Simulate N tournaments and keep track of win counts
-     for _ in range(N):
-        winner = simulate_tournament(team)
+    for _ in range(N):
+        winner = simulate_tournament(teams)
         counts[winner] = counts.get(winner, 0) + 1
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
         print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
+
+if __name__ == "__main__":
+    main()
+
 
 
 def simulate_game(team1, team2):
@@ -62,7 +67,7 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
      while len(teams) > 1:
         teams = simulate_round(teams)
-     return teams[0]["name"]
+    return teams[0]["name"]
 
 if __name__ == "__main__":
     main()
