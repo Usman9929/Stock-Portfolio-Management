@@ -15,11 +15,10 @@ def main():
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
 
-    teams = []
-    filename = sys.argv[1]
 
     teams = []
     # TODO: Read teams into memory from file
+    filename = sys.argv[1]
     with open(filename) as file:
         file_reader = csv.DictReader(file)
         for row in file_reader:
