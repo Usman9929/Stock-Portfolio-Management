@@ -25,9 +25,9 @@ def main():
             teams.append({
                 "team": row["team"], "rating": int(row["rating"] )})
 
-    for i in N:
-        #timer
-        start_time = time.time()
+  for n in N:
+    #timer
+    start_time = timer.time()
 
 
     counts = {}
