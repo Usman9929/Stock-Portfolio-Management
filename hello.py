@@ -6,4 +6,6 @@ for i in range(3):
     book["Author"] = input("Author:")
     print(book)
 
+    books.append(book)
+
 print(books)
