@@ -23,7 +23,7 @@ def check_validity(cn):
 
         cn //= 10
 
-    sum % 10 == 0
+    return sum % 10 == 0
 
 def print_card_brand(cn):
     # either can begin with a 34 or 37
