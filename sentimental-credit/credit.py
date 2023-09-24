@@ -16,7 +16,7 @@ def main():
 # Fucntion check that the card is valid or invalid
 def check_validity(cred_card_no):
     sum = 0
-    for i in range(len(str(4012888888881881))):
+    for i in range(len(str(cred_card_no))):
         if i % 2 == 0:
             sum += cred_card_no % 10
         else:
@@ -30,11 +30,15 @@ def check_validity(cred_card_no):
 
 def print_card_brand(cred_card_no):
     # either can begin with a 34 or 37
-    if (cred_card_no >= 34e13 and cred_card_no < 35e13) or (cred_card_no >= 37e13 and cred_card_no < 38e13):
+    if (cred_card_no >= 34e13 and cred_card_no < 35e13) or (
+        cred_card_no >= 37e13 and cred_card_no < 38e13
+    ):
         print("AMEX")
     elif cred_card_no >= 51e14 and cred_card_no < 56e14:
-        print("MASETCARD")  # cn begin with either 51,52....56
-    elif (cred_card_no >= 4e12 and cred_card_no < 5e12) or (cred_card_no >= 4e15 and cred_card_no < 5e15):
+        print("MASTERCARD")  # cn begin with either 51,52....56
+    elif (cred_card_no >= 4e12 and cred_card_no < 5e12) or (
+        cred_card_no >= 4e15 and cred_card_no < 5e15
+    ):
         print("VISA")
     else:
         print("INVALID")
