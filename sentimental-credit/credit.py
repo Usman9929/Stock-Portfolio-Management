@@ -2,6 +2,7 @@ from cs50 import get_int
 
 
 def main():
+    # Get Card Number from user.
     while True:
         credit_card = get_int("Number: ")
         if credit_card >= 0:
@@ -12,13 +13,14 @@ def main():
         print("INVALID")
 
 
-def check_validity(cn):
+# Fucntion check that the card is valid or invalid
+def check_validity(cred_card_no):
     sum = 0
     for i in range(len(str(cn))):
         if i % 2 == 0:
-            sum += cn % 10
+            sum += cred_card_no % 10
         else:
-            digit = 2 * (cn % 10)
+            digit = 2 * (cred_card_no % 10)
             sum += digit // 10 + digit % 10
 
         cn //= 10
@@ -26,13 +28,13 @@ def check_validity(cn):
     return sum % 10 == 0
 
 
-def print_card_brand(cn):
+def print_card_brand(cred_card_no):
     # either can begin with a 34 or 37
-    if (cn >= 34e13 and cn < 35e13) or (cn >= 37e13 and cn < 38e13):
+    if (cred_card_no >= 34e13 and cred_card_no < 35e13) or (cred_card_no >= 37e13 and cred_card_no < 38e13):
         print("AMEX")
-    elif cn >= 51e14 and cn < 56e14:
+    elif cred_card_no >= 51e14 and cred_card_no < 56e14:
         print("MASETCARD")  # cn begin with either 51,52....56
-    elif (cn >= 4e12 and cn < 5e12) or (cn >= 4e15 and cn < 5e15):
+    elif (cred_card_no >= 4e12 and cred_card_no < 5e12) or (cred_card_no >= 4e15 and cred_card_no < 5e15):
         print("VISA")
     else:
         print("INVALID")
