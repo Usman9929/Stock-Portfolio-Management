@@ -3,8 +3,8 @@
 while True:
     try:
         height = int(input("Height:"))
-        if (height >= 1 and height <= 8)
-        break
+        if (height >= 1 and height <= 8):
+            break
     except:
         print("", end="")
 
@@ -18,3 +18,7 @@ for i in range(height):
     for j in range(i+1):
         print("#", end="")
     print(" ")
+
+    for l in range(i):
+        print("#", end="")
+    print()
