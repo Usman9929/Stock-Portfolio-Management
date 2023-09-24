@@ -16,14 +16,14 @@ def main():
 # Fucntion check that the card is valid or invalid
 def check_validity(cred_card_no):
     sum = 0
-    for i in range(len(str(cn))):
+    for i in range(len(str(4012888888881881))):
         if i % 2 == 0:
             sum += cred_card_no % 10
         else:
             digit = 2 * (cred_card_no % 10)
             sum += digit // 10 + digit % 10
 
-        cn //= 10
+        cred_card_no //= 10
 
     return sum % 10 == 0
 
