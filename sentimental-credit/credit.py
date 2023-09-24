@@ -1,31 +1,49 @@
 from cs50 import get_int
 
+
 def main():
-    while True:
-        h = int(input("Enter credit number: "))
-        if h >0:
-            break
+    # Prompts user for card number
+    card = get_int("Number: ")
 
-    odd_sum_digit=0
-    even_sum_digit=0
+    # If card is valid, then check the card company
+    if valid_card(card):
+        card_company(card)
+    # Card not valid
+    else:
+        print("INVALID")
 
-    while (h > 0):
-        last_digit= h % 10
-        odd_sum_digit += last_digit
-        even_digit= int((h / 10) % 10)
 
-        if (2 * even_digit) > 9:
-              even_digit = (2 * even_digit)-9
+def valid_card(num):
+    # Calculates sum according to Luhn's Algorithm
+    sum = 0
+    for i, c in enumerate(reversed(str(num))):
+        if i % 2 == 0:
+            sum += int(c)
         else:
-            even_digit = 2 * even_digit
+            for j in str(int(c) * 2):
+                sum += int(j)
 
-        even_sum_digit += even_digit
+    # Checks if sum is divisible by 10
+    if sum % 10 == 0:
+        return True
+    else:
+        return False
 
-        h=h//100
 
-    sum= odd_sum_digit + even_sum_digit
-    print(f"{sum}")  #Test that checksum works.
+def card_company(card):
+    # Removes all the digits from card number except first 2
+    num = int(str(card)[0:2])
+
+    # Check for conditions of all companies
+    if (num is 34 or num is 37) and len(str(card)) is 15:
+        print("AMEX")
+    elif num > 50 and num < 56 and len(str(card)) is 16:
+        print("MASTERCARD")
+    elif num >= 40 and num < 50 and (len(str(card)) is 13 or len(str(card)) is 16):
+        print("VISA")
+    else:
+        print("INVALID")
 
 
-   if (sum % 10 == 0):
-    
+if __name__ == "__main__":
+    main()
