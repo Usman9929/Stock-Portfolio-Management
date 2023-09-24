@@ -6,7 +6,7 @@ def main():
         credit_card = get_int("Number: ")
         if credit_card >= 0:
             break # we look for the valid case here and break out
-    if chec_validity(credit_card):
+    if check_validity(credit_card):
         print_card_brand(credit_card)
     else:
         print("INVALID")
@@ -16,14 +16,14 @@ def check_validity(cn):
     sum = 0
     for i in range(len(str(cn))):
         if(i % 2 == 0):
-            sum += % 10
+            sum += cn % 10
         else:
             digit = 2 * (cn % 10)
             sum += digit // 10 + digit % 10
 
         cn //= 10
 
-    sum % 10 == 0:
+    sum % 10 == 0
 
 def print_card_brand(cn):
     # either can begin with a 34 or 37
@@ -35,15 +35,6 @@ def print_card_brand(cn):
         print("VISA")
     else:
         print("INVALID")
-
-
-
-
-
-
-
-
-
 
 
 
