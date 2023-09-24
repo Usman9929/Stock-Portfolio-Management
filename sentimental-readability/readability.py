@@ -7,7 +7,7 @@ text = get_string("Text: ")
 # Count number of latter in text
 num_latters = 0
 for c in text:
-    if c.isaplha():
+    if c.isalpha():
         num_latters += 1
 
 # Count Number of words in text
