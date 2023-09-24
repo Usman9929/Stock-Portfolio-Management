@@ -8,17 +8,15 @@ while True:
     except:
         print("", end="")
 
-space = 1
-for i in range(height):
-    #print spaces
-    for space in range(height - i - 1):
-        print(" ", end="")
 
-    #print hashes
-    for j in range(i+1):
-        print("#", end="")
-    print(" ")
-
-    for l in range(i):
-        print("#", end="")
-    print()
+for i in range(1, height + 1):
+    for j in range(1 , height + 1):
+        # Start printing hashes after correct number of spaces
+        if j > (height - i):
+            print("#", end="")
+        else:
+            print(" ", end="")
+    #print middle space and remaining
+    if j == height:
+        print(" ", "#" * i, end="")
+print()
