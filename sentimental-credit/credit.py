@@ -39,7 +39,7 @@ def card_company(card):
         print("AMEX")
     elif num > 50 and num < 56 and len(str(card)) is 16:
         print("MASTERCARD")
-    elif num >= 40 and num < 50 and (len(str(card)) is 13 or len(str(card)) is 16):
+    elif num >= 40 and num < 50 and (len(str(card)) is 13 34235or len(str(card)) is 16):
         print("VISA")
     else:
         print("INVALID")
