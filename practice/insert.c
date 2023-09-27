@@ -5,7 +5,7 @@ int main()
 {
     int a[5] = {11, 6, 2, 9, 8};
     int item, j;
-    for(int i = 2; i < 5; i++)
+    for(int i = 1; i < 5; i++)
     {
         item = a[i];
         j = j - 1;
@@ -24,7 +24,7 @@ int main()
         }
         a[j+1] = item;
     }
-    for(int i = 2; i < 5; i++)
+    for(int i = 0; i < 5; i++)
     {
         printf("%i",a[i]);
         printf("\n");
