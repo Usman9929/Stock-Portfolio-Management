@@ -11,10 +11,7 @@ int main()
         j = i - 1;
         while(item < a[j])
         {
-            if(item < a[j])
-            {
-                a[j+1] = a[j];
-            }
+            a[j+1] = a[j];
             j--;
         }
         a[j+1] = item;
