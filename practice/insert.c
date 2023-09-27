@@ -26,7 +26,7 @@ int main()
     }
     for(int i = 2; i < 5; i++)
     {
-        printf(a[i]);
+        printf("%i",a[i]);
         printf("\n");
     }
 }
