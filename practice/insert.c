@@ -8,7 +8,7 @@ int main()
     for(int i = 1; i < 5; i++)
     {
         item = a[i];
-        j = j - 1;
+        j = i - 1;
         while(item < a[j])
         {
             if(j == 0)
