@@ -3,7 +3,7 @@
 
 int main()
 {
-    int a[5] = {11, 6, 2, 9, 8};
+    int a[6] = {12, 13, 2, 5, 6, 3};
     int item, j;
     for(int i = 1; i < 5; i++)
     {
