@@ -1,26 +1,47 @@
-#include <cs50.h>
 #include <stdio.h>
 
-int main()
-{
-    int a[5] = {11, 6, 2, 9, 8};
-    for(int i = 2; i < 5; i++)
-    {
-        item = a[i];
-        j = j - 1;
-        while(item < a[j])
-        {
-            if(j == 0)
-            {
-            break;
+// Function to perform selection sort on an array
+void selectionSort(int arr[], int n) {
+    int i, j, minIndex, temp;
+
+    // Traverse through all array elements
+    for (i = 0; i < n - 1; i++) {
+        // Find the minimum element in the remaining unsorted array
+        minIndex = i;
+        for (j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
             }
-            else
-            if(item < a[j])
-            {
-                a[j+1] = a[j];
-            }
-            j--
         }
-        a[j+1] = item;
+
+        // Swap the found minimum element with the first element
+        temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
     }
 }
+
+int main() {
+    int arr[] = {64, 25, 12, 22, 11};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Original array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    selectionSort(arr, n);
+
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+
+
