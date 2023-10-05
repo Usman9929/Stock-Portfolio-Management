@@ -27,7 +27,7 @@ def main():
     # TODO: Check database for matching profiles
     for row in database:
         match = True
-        for key in row.key():
+        for key in row.keys():
             if key == "name":
                 continue
             if int(row[key]) != str_counts[key]:
