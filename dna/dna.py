@@ -22,7 +22,7 @@ def main():
     for key in database[0].keys():
         if key == "name":
             continue
-    str_counts[key] = longest_match(sequence, key)
+        str_counts[key] = longest_match(sequence, key)
 
     # TODO: Check database for matching profiles
     for row in database:
@@ -33,9 +33,9 @@ def main():
             if int(row[key]) != str_counts[key]:
                 match = False
                 break
-            if match:
-                print(row["name"])
-                return
+        if match:
+            print(row["name"])
+            return
     print("No match")
 
 def longest_match(sequence, subsequence):
