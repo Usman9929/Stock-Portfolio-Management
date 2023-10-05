@@ -20,7 +20,7 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     str_counts = {}
     for key in database[0].keys():
-        if key == "name"
+        if key == "name":
             continue
     str_counts[key] = longest_match(sequence, key)
 
@@ -28,7 +28,7 @@ def main():
     for row in database:
         match = True
         for key in row.key():
-            if key == "name"
+            if key == "name":
                 continue
             if int(row[key]) != str_counts[key]:
                 match = False
