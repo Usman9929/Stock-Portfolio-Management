@@ -55,6 +55,6 @@ JOIN people p ON p.license_plate = bsl.license_plate
 JOIN bank_account ba ON ba.person_id = p.id
 JOIN atm_transactions at ON at.account_number = ba.account_number
 JOIN phone_calls pc ON pc.caller = p.phone_number
-WHERE bsl.year = 2021 AND bsl.month = 7 AND bsl.day = 28 AND bsl.hour = 10 AND bsl.munute BETWEEN 15 AND 25
-AND at.atm_location = 'leggett Street' AND at.year = 2021 AND at.month = 7 AND at.day = 28 AND at.trasaction_type
+WHERE bsl.year = 2021 AND bsl.month = 7 AND bsl.day = 28 AND bsl.hour = 10 AND bsl.minute BETWEEN 15 AND 25
+AND at.atm_location = 'Leggett Street' AND at.year = 2021 AND at.month = 7 AND at.day = 28 AND at.trasaction_type
 AND pc.year = 2021 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60;
