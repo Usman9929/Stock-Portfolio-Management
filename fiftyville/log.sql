@@ -7,4 +7,4 @@ SELECT * FROM interviews
 WHERE transcript LIKE '%bakery%';
 
 --witness 1 truth--
-SELECT * FROM bakery_security_logs WHERE year = 2021 AND MONTH = 7 AND DAY = 28 AND HOUR = 10 AND MINUTES BETWEEN 
+SELECT * FROM bakery_security_logs WHERE year = 2021 AND MONTH = 7 AND DAY = 28 AND HOUR = 10 AND MINUTE BETWEEN 15 AND 25;
