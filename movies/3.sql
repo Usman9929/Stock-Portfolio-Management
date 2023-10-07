@@ -1,0 +1,3 @@
+SELECT title FROM movies
+WHERE year >= 2019
+ORDER BY title ASC;
