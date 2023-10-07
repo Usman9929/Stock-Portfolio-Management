@@ -47,3 +47,10 @@ JOIN airports origin ON f.origin_airport_id = origin.id
 JOIN airports destination ON f.destination_airport_id = destination.id
 WHERE origin.id = 8 AND f.year = 2021 AND f.month = 7 AND f.day = 29
 ORDER BY f.hour, f.minute;
+
+--Combine info from all threee testimonies--
+SELECT p.name
+FROM bakery_security_logs bsl
+JOIN people p ON p.license_plate = bls.license_plate
+JOIN bank_account ba ON ba.person = p.id
+
