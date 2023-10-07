@@ -5,3 +5,5 @@ WHERE street = 'Humphrey Street';
 --Bakery witnesses--
 SELECT * FROM interviews
 WHERE transcript LIKE '%bakery%';
+
+--witness 1 truth--
