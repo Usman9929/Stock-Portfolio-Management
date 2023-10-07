@@ -13,3 +13,8 @@ SELECT p.name, bsl.activity, bsl.license_plate, bsl.year, bsl.month, bsl.day, bs
 FROM bakery_security_logs bsl
 JOIN people p ON p.license_plate = bsl.license_plate
 WHERE bsl.year = 2021 AND bsl.month = 7 AND bsl.day = 28 and bsl.hour = 10 AND bsl.minute BETWEEN 15 AND 25;
+
+--Check witness 2
+SELECT * FROM atm_transactions
+WHERE atm_location = 'Leggett Street'
+AND year = 2021 AND MONTH = 7 AND DAY = 28;
