@@ -24,20 +24,22 @@
             }
 
             function checkTextAnswer() {
-                var input = document.getElementById('text-answer');
-                var response = document.getElementByid('text-response');
-                var answer = input.value;
+                    var input = document.getElementById('text-answer');
+                    var response = document.getElementById('text-response'); // Fixed typo here
+                    var answer = input.value;
 
-                if (answer === 'Albert Einstein') {
-                    input.style.backgroundColor = 'green';
-                    response.innerHTML = 'Correct!';
-                    response.style.color = 'green';
-                } else {
-                    input.style.backgroundColor = 'red';
-                    response.innerHTML = 'Incorrect';
-                    response.style.color = 'red';
-                }
+                    if (answer === 'Albert Einstein') {
+                        input.style.backgroundColor = 'green';
+                        response.innerHTML = 'Correct!';
+                        response.style.color = 'green';
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        response.innerHTML = 'Incorrect';
+                        response.style.color = 'red';
+                    }
             }
+
+
         </script>
     </head>
     <body>
