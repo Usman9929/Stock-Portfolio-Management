@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
@@ -24,24 +25,25 @@
             }
 
             function checkTextAnswer() {
-                    var input = document.getElementById('text-answer');
-                    var response = document.getElementById('text-response'); // Fixed typo here
-                    var answer = input.value;
+                var input = document.getElementById('text-answer');
+                var response = document.getElementById('text-response'); // Fixed typo here
+                var answer = input.value;
 
-                    if (answer === 'Albert Einstein') {
-                        input.style.backgroundColor = 'green';
-                        response.innerHTML = 'Correct!';
-                        response.style.color = 'green';
-                    } else {
-                        input.style.backgroundColor = 'red';
-                        response.innerHTML = 'Incorrect';
-                        response.style.color = 'red';
-                    }
+                if (answer === 'Albert Einstein') {
+                    input.style.backgroundColor = 'green';
+                    response.innerHTML = 'Correct!';
+                    response.style.color = 'green';
+                } else {
+                    input.style.backgroundColor = 'red';
+                    response.innerHTML = 'Incorrect';
+                    response.style.color = 'red';
+                }
             }
 
 
         </script>
     </head>
+
     <body>
         <div class="header">
             <h1>Trivia!</h1>
@@ -71,4 +73,5 @@
             </div>
         </div>
     </body>
+
 </html>
