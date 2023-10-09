@@ -22,7 +22,20 @@
                 }
             }
 
-            
+            function checkTextAnswer() {
+                var input = document.getElementById('text.answer');
+                var response = document.getElementByid('text-response');
+                var answer = input.value;
+
+                if (answer === '42') {
+                    input.style.backgroundColor = 'green';
+                    response.InnerHTML = 'Correct!';
+                    response.style.color = 'green';
+                } else {
+                    input.style.backhgroundColor = 'red';
+                    response.InnerHTML = 'Incorrect';
+                }
+            }
         </script>
     </head>
     <body>
