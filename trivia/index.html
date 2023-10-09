@@ -27,13 +27,13 @@
                 var response = document.getElementByid('text-response');
                 var answer = input.value;
 
-                if (answer === '42') {
+                if (answer === 'Albert Einstein') {
                     input.style.backgroundColor = 'green';
-                    response.InnerHTML = 'Correct!';
+                    response.innerHTML = 'Correct!';
                     response.style.color = 'green';
                 } else {
-                    input.style.backhgroundColor = 'red';
-                    response.InnerHTML = 'Incorrect';
+                    input.style.backgroundColor = 'red';
+                    response.innerHTML = 'Incorrect';
                     response.style.color = 'red';
                 }
             }
