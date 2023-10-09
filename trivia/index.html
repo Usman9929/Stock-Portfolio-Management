@@ -7,13 +7,14 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
+
             function checkAnswer(button) {
                 var answer = button.getAttribute('data.answer');
                 var response = document.getElementBytId('response');
 
                 if (answer === 'correct') {
                     button.style.backgroundColor = 'green';
-                    response.innerHTML = 'Correct!';
+                    response.innerHTML = 'correct!';
                     response.style.color = 'green';
                 } else {
                     button.style.backgroundColor = 'red';
