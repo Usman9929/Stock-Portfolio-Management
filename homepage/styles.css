@@ -24,3 +24,6 @@ li:hover {
 h4.about {
     color: Orange;
 }
+body {
+    background-image: url('your-image.jpg');
+}
