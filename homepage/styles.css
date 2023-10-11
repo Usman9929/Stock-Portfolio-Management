@@ -17,3 +17,7 @@ h1 {
 h3 {
     color: Darkblue;
 }
+
+li:hover {
+    color: blue;
+}
