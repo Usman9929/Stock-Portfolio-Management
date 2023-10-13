@@ -8,4 +8,4 @@ def index():
         name = request.args["name"]
     else:
         name = "world"
-    return render_template("index.html", placeholder=name)
+    return render_template("index.html", name=name)
