@@ -3,7 +3,9 @@
 {% block body %}
 
     <ul>
-        <li>{{ name }}</li>
+        {% for name in registerants %}
+            <li>{{ name }}</li>
+        {% endfor %}
     </ul>
 
 {% endblock %}
