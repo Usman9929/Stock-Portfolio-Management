@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-registerants = {}
+REGISTERANTS = {}
 
 @app.route("/")
 def index():
@@ -17,4 +17,4 @@ def register():
 
 @app.route("/registerants")
 def registerants():
-    return render_template("registerants.html", registerants=registerants)
+    return render_template("registerants.html", registerants=REGISTERANTS)
