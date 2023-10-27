@@ -29,16 +29,17 @@ def index():
         month = request.form.get("month")
         day = request.form.get("day")
 
-        #insert info into db table
-        db.execute("INSERT INTO birthdays (name, month, day) VALUES (:name, :month, :day) " ,
-                   name=name, month=month, day=day)
+        # insert info into db table
+        db.execute(
+            "INSERT INTO birthdays (name, month, day) VALUES (:name, :month, :day) ",
+            name=name,
+            month=month,
+            day=day,
+        )
         return redirect("/")
 
     else:
-
         # TODO: Display the entries in the database on index.html
         rows = db.execute("SELECT * FROM birthdays")
 
         return render_template("index.html", rows=rows)
-
-
