@@ -61,7 +61,7 @@ def buy():
     if shares < 0:
         return apology("Shares Not Alllowed")
 
-    transaction_value = shares = stock["price"]
+    transaction_value = shares * stock["price"]
 
     user_id = session["user_id"]
 
