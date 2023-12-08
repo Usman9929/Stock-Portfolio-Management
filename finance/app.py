@@ -4,6 +4,7 @@ from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
+import datetime
 
 from helpers import apology, login_required, lookup, usd
 
@@ -42,7 +43,7 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    if resuest.method == "GET":
+    if request.method == "GET":
         return render_template("buy.html")
 
     else:
@@ -65,7 +66,16 @@ def buy():
     user_id = session["user_id"]
 
     user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
-    return jsonify(user_cash_db)
+    user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
+    user_cash = user_cash_db[0]["cash"]
+
+    if user_cash < transaction_value:
+        return apology("Not Enough Money")
+
+    uptd_cash = user_cash - transaction_value
+
+    # UPDATE table_name SET colum1 = value1 , coloum2 = value1,..... WHERE condition
+    db.execute("UPDATE users SET cash = ?", user_id)
 
 @app.route("/history")
 @login_required
