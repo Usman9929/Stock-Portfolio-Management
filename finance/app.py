@@ -77,6 +77,10 @@ def buy():
     # UPDATE table_name SET colum1 = value1 , coloum2 = value1,..... WHERE condition
     db.execute("UPDATE users SET cash = ?", user_id)
 
+    date = datetime.datetime.now()
+
+
+
 @app.route("/history")
 @login_required
 def history():
