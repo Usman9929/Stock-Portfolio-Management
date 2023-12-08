@@ -79,8 +79,9 @@ def buy():
 
     date = datetime.datetime.now()
 
-    new_user = db.execute("INSERT INTO transaction (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", username, hash)
+    new_user = db.execute("INSERT INTO transaction (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"], date)
 
+    return redirect("/")
 
 
 @app.route("/history")
