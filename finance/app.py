@@ -60,6 +60,15 @@ def buy():
         if shares < 0:
             return apology("Shares Not Alllowed")
 
+        transaction_value = shares = stock["price"]
+
+        user_id = session["user_id"]
+
+        user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
+        return jsonify(user_cash_db)
+
+
+
 
 
 @app.route("/history")
