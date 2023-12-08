@@ -50,26 +50,22 @@ def buy():
         shares = int(request.form.get("shares"))
 
     if not symbol:
-            return apology("Must Give Symbol")
+         return apology("Must Give Symbol")
 
-        stock = lookup(symbol.upper())
+    stock = lookup(symbol.upper())
 
-        if stock == None:
-            return apology("Symbol Does Not Exist")
+    if stock == None:
+        return apology("Symbol Does Not Exist")
 
-        if shares < 0:
-            return apology("Shares Not Alllowed")
+    if shares < 0:
+        return apology("Shares Not Alllowed")
 
-        transaction_value = shares = stock["price"]
+    transaction_value = shares = stock["price"]
 
-        user_id = session["user_id"]
+    user_id = session["user_id"]
 
-        user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
-        return jsonify(user_cash_db)
-
-
-
-
+    user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
+    return jsonify(user_cash_db)
 
 @app.route("/history")
 @login_required
