@@ -43,20 +43,11 @@ def index():
 def buy():
     """Buy shares of stock"""
     if resuest.method == "GET":
-        return render_template("quote.html")
+        return render_template("buy.html")
 
     else:
-        symbol = reques.form.get("symbol")
-
-        if not symbol:
-            return apology("Must Give Symbol")
-
-        stock = lookup(symbol.upper())
-
-        if stock == None:
-            return apology("Sybmol Does Not Exist")
-
-        return render_template("quoted.html", name = stock["name])
+        symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
 
 
 @app.route("/history")
