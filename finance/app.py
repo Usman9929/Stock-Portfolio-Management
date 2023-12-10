@@ -107,7 +107,8 @@ def add_cash():
         user_cash = user_cash_db[0]["cash"]
 
         uptd_cash = user_cash + new_cash
-        # UPDATE table_name SET colum1 = value1 , coloum2 = value1,..... WHERE condition
+
+         # UPDATE table_name SET colum1 = value1 , coloum2 = value1,..... WHERE condition
         db.execute("UPDATE users SET cash = ? WHERE id = ? ", uptd_cash, user_id)
 
         return redirect("/")
