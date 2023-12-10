@@ -97,24 +97,20 @@ def add_cash():
     if request.method == "GET":
         return render_template("add.html")
     else:
-        new_cash = request.form.get("new_cash")
+        new_cash = int(request.form.get("new_cash"))
 
         if not new_cash:
             return apology("You Must Give Money")
 
         user_id = session["user_id"]
-
         user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
-    user_cash = user_cash_db[0]["cash"]
+        user_cash = user_cash_db[0]["cash"]
 
-    if user_cash < transaction_value:
-        return apology("Not Enough Money")
+        uptd_cash = user_cash + new_cash
+        # UPDATE table_name SET colum1 = value1 , coloum2 = value1,..... WHERE condition
+        db.execute("UPDATE users SET cash = ? WHERE id = ? ", uptd_cash, user_id)
 
-    uptd_cash = user_cash - transaction_value
-
-    # UPDATE table_name SET colum1 = value1 , coloum2 = value1,..... WHERE condition
-    db.execute("UPDATE users SET cash = ? WHERE id = ? ", uptd_cash, user_id)
-
+        return redirect("/")
 
 @app.route("/history")
 @login_required
