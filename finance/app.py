@@ -70,7 +70,6 @@ def buy():
     transaction_value = shares * stock["price"]
 
     user_id = session["user_id"]
-
     user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
     user_cash = user_cash_db[0]["cash"]
 
@@ -227,9 +226,10 @@ def sell():
     transaction_value = shares * stock["price"]
 
     user_id = session["user_id"]
-
     user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
     user_cash = user_cash_db[0]["cash"]
+
+    user_shares = db.execute("")
 
     uptd_cash = user_cash + transaction_value
 
