@@ -1,26 +1,29 @@
-{% extends "layout.html" %}
-
-{% block title %}
-    Portfolio
-{% endblock %}
-
 {% block main %}
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Symbols</th>
-        <th scope="col">Shares</th>
-        <th scope="col">Price</th>
-      </tr>
-    </thead>
-    <tbody>
-        {% for row in database %}
+    <h2>Portpolio</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-light">
             <tr>
-                <td>{{ row["symbol"] }}</td>
-                <td>{{ row["shares"] }}</td>
-                <td>{{ row["price"] }}</td>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
             </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-{% endblock %}
+        </thead>
+        <tbody>
+            {% for stock in stock %}
+                <tr>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.price }}</td>
+                    <td>{{ stock.shares }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4" align="right">Cash</td>
+                <td>{{ cash }}</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="right">t=Total Value</td>
+                <td>{{ total_value }}</td>
+            </tr>
+        </tbody>
+    </table>
