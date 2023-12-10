@@ -90,7 +90,15 @@ def buy():
     return redirect("/")
 
 
-@app.route("/add_cash", method=["GET", "POS"])
+@app.route("/history")
+@login_required
+def history():
+    """Show history of transactions"""
+    user_id = session["user_id"]
+    transactions_db = db.execute("SELECT * FROM transactions WHERE user_id = :id", id=user_id)
+    return render_template("history.html", transactions = transactions_db)
+
+@app.route("/add_cash", methods=["GET", "POST"])
 @login_required
 def add_cash():
     """User can add cash"""
@@ -108,18 +116,10 @@ def add_cash():
 
         uptd_cash = user_cash + new_cash
 
-         # UPDATE table_name SET colum1 = value1 , coloum2 = value1,..... WHERE condition
+        # UPDATE table_name SET colum1 = value1 , coloum2 = value1,..... WHERE condition
         db.execute("UPDATE users SET cash = ? WHERE id = ? ", uptd_cash, user_id)
 
         return redirect("/")
-
-@app.route("/history")
-@login_required
-def history():
-    """Show history of transactions"""
-    user_id = session["user_id"]
-    transactions_db = db.execute("SELECT * FROM transactions WHERE user_id = :id", id=user_id)
-    return render_template("history.html", transactions = transactions_db)
 
 
 @app.route("/login", methods=["GET", "POST"])
