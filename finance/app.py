@@ -60,7 +60,7 @@ def buy():
         quote = lookup(symbol)
         if quote is None:
             return apology("symbol not found")
-            
+
         price = quote["price"]
         if quote is None:
             return apology("symbol not found")
@@ -79,7 +79,7 @@ def buy():
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)", user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
 
         flash(f"Boutght {shares} shares of {symbol} for {usd(total_cost)}!")
-
+        return redirect("/")
     else:
         return render_template("buy.html")
 
