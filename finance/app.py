@@ -83,9 +83,9 @@ def buy():
             flash('Bought!')
             return redirect("/")
 
-        # User reached route via GET
-        else:
-            return render_template("buy.html")
+    # User reached route via GET
+    else:
+        return render_template("buy.html")
 
 
 @app.route("/history")
