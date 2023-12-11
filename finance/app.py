@@ -211,40 +211,45 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    if request.method == "GET":
-        user_id = session["user_id"]
-        symbols_user = db.execute("SELECT symbol FROM transactions WHERE user_id = :id GROUP BY symbol HAVING SUM(shares) > 0", id=user_id)
-        return render_template("sell.html", symbols = [row["symbol"] for row in symbols_user])
-    else:
-        symbol = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
+    # Get users stocks
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shaers FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
+                        user_id=session["user_id"])
 
-    if not symbol:
-         return apology("Must Give Symbol")
+    # if the user submit the form
+    if request.method == "POST":
+        symbol = request.form.get("symbol").upper()
+        shares = request.form.get("shares")
+        if not symbol:
+            return apology("must provide symbols")
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("must provide a positive integer number of shares")
+        else:
+            shares = int(shares)
 
-    stock = lookup(symbol.upper())
+        for stock in stocks:
+            if stock["symbol"] == symbol:
+                if stock["total_shares"] < shares:
+                    return apology("not enough shares")
+                else:
+                    # Get quote
+                    quote = lookuo(symbol)
+                    if quote is None:
+                        return apology("symbol not found")
+                    price = quote["price"]
+                    total_sale = shares * price
 
-    if stock == None:
-        return apology("Symbol Does Not Exist")
+                    # Update users table
+                    db.execute("UPDATE users SET cash = cash + :total_sale WHERE id = :user_id",
+                                total_sales=total_sale, user_id=session["user_id"])
 
-    if shares < 0:
-        return apology("Shares Not Alllowed")
+                    # Add the sale to the history table
+                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
+                               user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
 
-    transaction_value = shares * stock["price"]
+                    flash(f"Sold {shares} shares of {symbol} for {usd(total_sales)}!")
+                    return redirect("/")
+            return apology("symbol not found")
 
-    user_id = session["user_id"]
-    user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
-    user_cash = user_cash_db[0]["cash"]
-
-    uptd_cash = user_cash + transaction_value
-
-    # UPDATE table_name SET colum1 = value1 , coloum2 = value1,..... WHERE condition
-    db.execute("UPDATE users SET cash = ? WHERE id = ? ", uptd_cash, user_id)
-
-    date = datetime.datetime.now()
-
-    db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], (-1)*shares, stock["price"], date)
-
-    flash("Sold!")
-
-    return redirect("/")
+        # if the user visits the page
+        else:
+            return render_templates("sell.html", stocks=stocks)
