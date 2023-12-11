@@ -49,8 +49,40 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    if request.method == "GET":
-        return render_template("buy.html")
+    if request.method == "POST":
+        symbol = request.form.get("symbol").upper()
+        shares = request.form.get("shares")
+        if not symbol:
+            return apology("must provide symbol")
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("must provide a positive integer number of shares")
+
+        quote = lookup(symbol)
+        if quote is None:
+            return apology("symbol not found")
+        price = quoete["price"]
+        if quote is None:
+            return apology("symbol not found")
+
+        price = quote["price"]
+        total_cost = int(shares) * price
+        cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
+
+        if cash < total_cost:
+            return apology("not enough cash")
+
+        #update users table
+        db.execute("UPDATE users SET cash = cash - :total_cost WHERE id = :user_id,
+                    total_cost=total_cost, user_id=session["user_id"]
+
+        #Add the purchase to the history table
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price),
+                    user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
+
+        flash(f"Boutght {shares} shares of {symbol} for {usd(total_cost)}!")
+
+    else:
+        return render_template("but.html")
 
     else:
         symbol = request.form.get("symbol")
