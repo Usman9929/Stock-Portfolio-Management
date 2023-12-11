@@ -254,13 +254,6 @@ def sell():
     user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
     user_cash = user_cash_db[0]["cash"]
 
-    
-    user_shares = db.execute("SELECT shares FROM transactions WHERE user_id=:id AND symbol = :symbol GROUP BY symbol", user_id, symbol)
-    user_shares_real = user_shares[0]["shares"]
-
-    if shares > user_shares_real:
-        return apology("You Do Not Have This Amount of Shares")
-
     uptd_cash = user_cash + transaction_value
 
     # UPDATE table_name SET colum1 = value1 , coloum2 = value1,..... WHERE condition
