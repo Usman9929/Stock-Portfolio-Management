@@ -49,45 +49,43 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    if request.method == "GET":
-        return render_template("buy.html")
-
-    else:
+    if request.method == "POST":
         symbol = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
+        shares_nbr = request.form.get("shares")
 
-    if not symbol:
-         return apology("Must Give Symbol")
+        # Ensure symbol is not blank
+        if symbol == "":
+            return apology("MISSING SYMBOL", 400)
+        if shares_nbr == "" or shares_nbr.isalpha():
+            return apology("MISSING SHARES", 400)
+        if not is_int(shares_nbr):
+            return apology("fractional not supported", 400)
+        if int(shares_nbr) <= 0:
+            return apology("share number can't be negative number or zero!", 400)
 
-    stock = lookup(symbol.upper())
+        stock_quote = lookup(symbol)
 
-    if stock == None:
-        return apology("Symbol Does Not Exist")
+        if not stock_quote:
+            return apology("INVALID SYMBOL", 400)
 
-    if shares < 0:
-        return apology("Shares Not Alllowed")
+        total_cost = int(shares_nbr) * stock_quote["price"]
 
-    transaction_value = shares * stock["price"]
+        user_cash = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
 
-    user_id = session["user_id"]
-    user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
-    user_cash = user_cash_db[0]["cash"]
+        if user_cash[0]["cash"] < total_cost:
+            return apology("CAN'T AFFORD", 400)
 
-    if user_cash < transaction_value:
-        return apology("Not Enough Money")
+        else:
+            db.execute("INSERT INTO trades (id, symbol, name, shares, price) VALUES(?, ?, ?, ?, ?)",
+                       session["user_id"], stock_quote['symbol'], stock_quote['name'], int(shares_nbr), stock_quote['price'])
+            cash = user_cash[0]["cash"]
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", cash - total_cost, session["user_id"])
+            flash('Bought!')
+            return redirect("/")
 
-    uptd_cash = user_cash - transaction_value
-
-    # UPDATE table_name SET colum1 = value1 , coloum2 = value1,..... WHERE condition
-    db.execute("UPDATE users SET cash = ? WHERE id = ? ", uptd_cash, user_id)
-
-    date = datetime.datetime.now()
-
-    db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"], date)
-
-    flash("Bought!")
-
-    return redirect("/")
+        # User reached route via GET
+        else:
+            return render_template("buy.html")
 
 
 @app.route("/history")
