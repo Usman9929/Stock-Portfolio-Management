@@ -232,7 +232,7 @@ def sell():
                     return apology("not enough shares")
                 else:
                     # Get quote
-                    quote = lookuo(symbol)
+                    quote = lookup(symbol)
                     if quote is None:
                         return apology("symbol not found")
                     price = quote["price"]
