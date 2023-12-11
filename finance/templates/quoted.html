@@ -1,12 +1,9 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Quoted
+    Log In
 {% endblock %}
 
 {% block main %}
-    <h1>Quoted</h1>
-    <h3>Name: {{ name }}</h3>
-    <h3>Price: {{ price }}</h3>
-    <h3>Symbol: {{ symbol }}</h3>
+    <p>A share of {{ symbol["name"]}} ({{symbol["symbol"]}}) costs {{symbol["price"] | usd}}</p>
 {% endblock %}
