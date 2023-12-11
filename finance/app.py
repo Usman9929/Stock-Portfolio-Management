@@ -180,7 +180,7 @@ def quote():
             return apology("invalid symbol",400)
         return render_template("quote.html", quote=quote)
     else:
-        return render_template("quote.html)
+        return render_template("quote.html")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
