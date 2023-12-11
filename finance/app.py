@@ -60,7 +60,7 @@ def buy():
         quote = lookup(symbol)
         if quote is None:
             return apology("symbol not found")
-        price = quoete["price"]
+        price = quote["price"]
         if quote is None:
             return apology("symbol not found")
 
@@ -80,7 +80,7 @@ def buy():
         flash(f"Boutght {shares} shares of {symbol} for {usd(total_cost)}!")
 
     else:
-        return render_template("but.html")
+        return render_template("buy.html")
 
 
 @app.route("/history")
