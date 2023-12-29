@@ -75,7 +75,7 @@ def buy():
         # Call lookup function to get stock data
 
         # Get the current portfolio information for the symbol
-        portfolio_info = db.execute("SELECT * FROM portfolio WHERE id = ? AND symbol = ?", user_id, symbol)
+        portfolio_info = db.execute("SELECT * FROM transactions WHERE id = ? AND symbol = ?", user_id, symbol)
 
         if not portfolio_info:
             # Symbol not in the portfolio, so insert a new record
@@ -85,7 +85,7 @@ def buy():
                 return apology("Cannot Afford the stock, out of cash ", 400)
             else:
                 with db.transaction():
-                    db.execute("INSERT INTO portfolio (id, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?)",
+                    db.execute("INSERT INTO transactions (id, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?)",
                                user_id, symbol, shares, price, total)
                     db.execute("INSERT INTO history (user_id, symbol, shares,price) VALUES (?,?,?,?)",user_id, symbol, shares, price)
         else:
@@ -101,7 +101,7 @@ def buy():
                 return apology("Cannot Afford the stock, out of cash ", 400)
             else:
                 with db.transaction():
-                    db.execute("UPDATE portfolio SET shares = shares + ?, total = ? WHERE id = ? AND symbol = ?",
+                    db.execute("UPDATE transactions SET shares = shares + ?, total = ? WHERE id = ? AND symbol = ?",
                                shares, new_total, user_id, symbol)
                     db.execute("INSERT INTO history (user_id, symbol, shares,price) VALUES (?,?,?,?)",user_id, symbol, shares, price)
 
