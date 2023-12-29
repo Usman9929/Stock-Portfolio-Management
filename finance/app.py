@@ -57,8 +57,12 @@ def buy():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
-        # Check if shares is numeric
-        if not shares.isdigit():
+        # Check if shares is a valid positive integer
+        try:
+            shares = int(shares)
+            if shares <= 0:
+                raise ValueError("Shares must be a positive integer")
+        except ValueError:
             return apology("Invalid Shares input")
 
         data = lookup(symbol)
@@ -76,7 +80,7 @@ def buy():
         if not portfolio_info:
             # Symbol not in the portfolio, so insert a new record
             price = data['price']
-            total = int(shares) * price
+            total = shares * price
             if total > cash[0]['cash']:
                 return apology("Cannot Afford the stock, out of cash ", 400)
             else:
@@ -91,7 +95,7 @@ def buy():
             current_total = current_shares * current_price_per_share
 
             price = data['price']
-            additional_total = int(shares) * price
+            additional_total = shares * price
             new_total = current_total + additional_total
             if additional_total > cash[0]['cash']:
                 return apology("Cannot Afford the stock, out of cash ", 400)
