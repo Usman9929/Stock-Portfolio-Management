@@ -49,35 +49,60 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    if request.method == "POST":
-        symbol = request.form.get("symbol").upper()
-        shares = request.form.get("shares")
-        if not symbol:
-            return apology("must provide symbol")
-        elif not shares or not shares.isdigit() or int(shares) <= 0:
-            return apology("must provide a positive integer number of shares")
-
-        quote = lookup(symbol)
-        if quote is None:
-            return apology("symbol not found")
-
-        price = quote["price"]
-        total_cost = int(shares) * price
-        cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
-
-        if cash < total_cost:
-            return apology("not enough cash")
-
-        #update users table
-        db.execute("UPDATE users SET cash = cash - :total_cost WHERE id = :user_id", total_cost=total_cost, user_id=session["user_id"])
-
-        #Add the purchase to the history table
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)", user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
-
-        flash(f"Boutght {shares} shares of {symbol} for {usd(total_cost)}!")
-        return redirect("/")
-    else:
+    if request.method == "GET":
         return render_template("buy.html")
+
+    elif request.method == "POST":
+        user_id = session.get("user_id")
+        symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
+
+        # Check if shares is numeric
+        if not shares.isdigit():
+            return apology("Invalid Shares input")
+
+        data = lookup(symbol)
+        if data is None:
+            return apology("Invalid Symbol", 400)
+
+        symbol = data['symbol']
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+
+        # Call lookup function to get stock data
+
+        # Get the current portfolio information for the symbol
+        portfolio_info = db.execute("SELECT * FROM portfolio WHERE id = ? AND symbol = ?", user_id, symbol)
+
+        if not portfolio_info:
+            # Symbol not in the portfolio, so insert a new record
+            price = data['price']
+            total = int(shares) * price
+            if total > cash[0]['cash']:
+                return apology("Cannot Afford the stock, out of cash ", 400)
+            else:
+                with db.transaction():
+                    db.execute("INSERT INTO portfolio (id, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?)",
+                               user_id, symbol, shares, price, total)
+                    db.execute("INSERT INTO history (user_id, symbol, shares,price) VALUES (?,?,?,?)",user_id, symbol, shares, price)
+        else:
+            # Symbol already in the portfolio, so update the shares and total
+            current_shares = portfolio_info[0]['shares']
+            current_price_per_share = portfolio_info[0]['price']
+            current_total = current_shares * current_price_per_share
+
+            price = data['price']
+            additional_total = int(shares) * price
+            new_total = current_total + additional_total
+            if additional_total > cash[0]['cash']:
+                return apology("Cannot Afford the stock, out of cash ", 400)
+            else:
+                with db.transaction():
+                    db.execute("UPDATE portfolio SET shares = shares + ?, total = ? WHERE id = ? AND symbol = ?",
+                               shares, new_total, user_id, symbol)
+                    db.execute("INSERT INTO history (user_id, symbol, shares,price) VALUES (?,?,?,?)",user_id, symbol, shares, price)
+
+    return redirect("/")
+
 
 
 @app.route("/history")
