@@ -51,57 +51,41 @@ def buy():
     """Buy shares of stock"""
     if request.method == "GET":
         return render_template("buy.html")
-
-    elif request.method == "POST":
-        user_id = session.get("user_id")
+    else:
         symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
 
-        # Check if shares is numeric
-        if not shares.isdigit():
-            return apology("Invalid Shares input")
+        if not symbol:
+                return apology("Must Give Symbol")
 
-        data = lookup(symbol)
-        if data is None:
-            return apology("Invalid Symbol", 400)
+        stock = lookup(symbol.upper())
 
-        symbol = data['symbol']
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+        if stock == None:
+            return apology("Symbol Does Not Exist")
 
-        # Call lookup function to get stock data
+        if shares < 0:
+            return apology("Share Not Allowed")
 
-        # Get the current portfolio information for the symbol
-        portfolio_info = db.execute("SELECT * FROM portfolio WHERE id = ? AND symbol = ?", user_id, symbol)
+        transaction_value = shares * stock["price"]
 
-        if not portfolio_info:
-            # Symbol not in the portfolio, so insert a new record
-            price = data['price']
-            total = int(shares) * price
-            if total > cash[0]['cash']:
-                return apology("Cannot Afford the stock, out of cash ", 400)
-            else:
-                with db.transaction():
-                    db.execute("INSERT INTO portfolio (id, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?)",
-                               user_id, symbol, shares, price, total)
-                    db.execute("INSERT INTO history (user_id, symbol, shares,price) VALUES (?,?,?,?)",user_id, symbol, shares, price)
-        else:
-            # Symbol already in the portfolio, so update the shares and total
-            current_shares = portfolio_info[0]['shares']
-            current_price_per_share = portfolio_info[0]['price']
-            current_total = current_shares * current_price_per_share
+        user_id = session["user_id"]
+        user_cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+        user_cash = user_cash_db[0]["cash"]
 
-            price = data['price']
-            additional_total = int(shares) * price
-            new_total = current_total + additional_total
-            if additional_total > cash[0]['cash']:
-                return apology("Cannot Afford the stock, out of cash ", 400)
-            else:
-                with db.transaction():
-                    db.execute("UPDATE portfolio SET shares = shares + ?, total = ? WHERE id = ? AND symbol = ?",
-                               shares, new_total, user_id, symbol)
-                    db.execute("INSERT INTO history (user_id, symbol, shares,price) VALUES (?,?,?,?)",user_id, symbol, shares, price)
+        if user_cash < transaction_value:
+            return apology("Not Enough Money")
+        uptd_cash = user_cash - transaction_value
 
-    return redirect("/")
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", uptd_cash, user_id)
+
+        date = datetime.datetime.now()
+
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"], date)
+
+        flash("Boudht!")
+
+        return redirect("/")
+
 
 
 
